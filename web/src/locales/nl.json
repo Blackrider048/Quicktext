@@ -69,7 +69,7 @@
     "map": "Kaart",
     "mark": "Markeren",
     "memo": "Memo",
-    "memos": "Memos",
+    "Quicktext": "Quicktext",
     "more": "Meer",
     "name": "Naam",
     "new": "Nieuw",
@@ -194,7 +194,7 @@
     },
     "copy-content": "Inhoud kopiëren",
     "copy-link": "Kopieer link",
-    "count-memos-in-date": "{{count}} {{memos}} op {{date}}",
+    "count-Quicktext-in-date": "{{count}} {{Quicktext}} op {{date}}",
     "delete-confirm": "Weet je zeker dat je deze memo wilt verwijderen? DEZE ACTIE IS NIET TERUG TE DRAAIEN",
     "delete-confirm-description": "Deze actie is onomkeerelijk. Bijlagen, links en referenties worden ook verwijderd.",
     "direction": "Richting",
@@ -212,11 +212,11 @@
     "link-preview": "Linkvoorbeeld",
     "links": "Links",
     "load-more": "Meer laden",
-    "no-archived-memos": "Geen gearchiveerde memos.",
-    "no-memos": "Geen memos.",
+    "no-archived-Quicktext": "Geen gearchiveerde Quicktext.",
+    "no-Quicktext": "Geen Quicktext.",
     "order-by": "Sorteren op",
     "outline": "Overzicht",
-    "search-placeholder": "Memos zoeken…",
+    "search-placeholder": "Quicktext zoeken…",
     "share": {
       "active-links": "Actieve deellinks",
       "copied": "Gekopieerd!",
@@ -245,7 +245,7 @@
       "image-download": "PNG downloaden",
       "image-download-failed": "Kan afbeelding niet exporteren",
       "image-downloaded": "Afbeelding opgeslagen",
-      "image-footer": "Gedeeld vanuit Memos",
+      "image-footer": "Gedeeld vanuit Quicktext",
       "image-share": "Deel afbeelding",
       "image-share-failed": "Kan afbeelding niet delen",
       "image-title": "Deel als afbeelding",
@@ -256,12 +256,12 @@
     "to-do": "Takenlijst",
     "view-detail": "Details bekijken",
     "visibility": {
-      "disabled": "Openbare memos zijn uitgezet",
+      "disabled": "Openbare Quicktext zijn uitgezet",
       "private": "Privé",
       "protected": "Werkruimte",
       "public": "Openbaar"
     },
-    "count-memos-updated-in-date": "{{count}} {{memos}} bijgewerkt op {{date}}",
+    "count-Quicktext-updated-in-date": "{{count}} {{Quicktext}} bijgewerkt op {{date}}",
     "newest-first": "Nieuwste eerst",
     "oldest-first": "Oudste eerst",
     "order": "Volgorde",
@@ -297,7 +297,7 @@
   "reference": {
     "add-references": "Referenties toevoegen",
     "embedded-usage": "Gebruiken als ingesloten inhoud",
-    "no-memos-found": "Geen memos gevonden",
+    "no-Quicktext-found": "Geen Quicktext gevonden",
     "search-placeholder": "Inhoud zoeken"
   },
   "resource": {
@@ -367,10 +367,10 @@
     "account": {
       "change-password": "Wachtwoord wijzigen",
       "email-note": "Optioneel",
-      "export-memos": "Memo's exporteren",
+      "export-Quicktext": "Memo's exporteren",
       "nickname-note": "Wordt getoond in de banner",
       "openapi-reset": "OpenAPI-sleutel resetten",
-      "openapi-sample-post": "Hallo #memos vanaf {{url}}",
+      "openapi-sample-post": "Hallo #Quicktext vanaf {{url}}",
       "openapi-title": "OpenAPI-sleutel",
       "reset-api": "API resetten",
       "title": "Accountinformatie",
@@ -598,7 +598,7 @@
       },
       "disable-password-login": "Wachtwoordlogin uitzetten",
       "disable-password-login-final-warning": "Typ \"CONFIRM\" als je zeker weet wat je doet.",
-      "disable-password-login-warning": "Als je dit uitzet, kan je niet meer inloggen met een wachtwoord, zonder de database aan te passen. Als je inlogprovider niet werkt, kan je memos niet in.",
+      "disable-password-login-warning": "Als je dit uitzet, kan je niet meer inloggen met een wachtwoord, zonder de database aan te passen. Als je inlogprovider niet werkt, kan je Quicktext niet in.",
       "display-with-updated-time": "Weergeven met bewerkte tijd",
       "enable-auto-compact": "Automatisch compact inschakelen",
       "enable-double-click-to-edit": "Dubbelklik om te bewerken inschakelen",
@@ -660,10 +660,10 @@
       "add-provider": "Aanbieder toevoegen",
       "api-key": "API-sleutel",
       "api-key-required": "API-sleutel is vereist.",
-      "byok-description": "Verbind OpenAI of Gemini met een API-sleutel uit uw eigen account. Memos belt de provider rechtstreeks vanaf deze server.",
-      "byok-key-note": "Gebruik een sleutel van uw provideraccount; Memos bundelt geen gedeelde AI-inloggegevens.",
+      "byok-description": "Verbind OpenAI of Gemini met een API-sleutel uit uw eigen account. Quicktext belt de provider rechtstreeks vanaf deze server.",
+      "byok-key-note": "Gebruik een sleutel van uw provideraccount; Quicktext bundelt geen gedeelde AI-inloggegevens.",
       "byok-label": "BYOK",
-      "byok-model-note": "Memos selecteert ondersteunde modellen voor functies zoals audiotranscriptie.",
+      "byok-model-note": "Quicktext selecteert ondersteunde modellen voor functies zoals audiotranscriptie.",
       "byok-storage-note": "Sleutels blijven op deze instantie en worden gemaskeerd wanneer instellingen worden geladen.",
       "byok-title": "Gebruik uw eigen AI-account",
       "configured": "Geconfigureerd",
@@ -671,7 +671,7 @@
       "default-endpoint": "Standaardeindpunt",
       "delete-provider": "AI-provider `{{title}}` verwijderen?",
       "description": "Providersleutels worden geleverd door de instantie-eigenaar en gebruikt door AI-functies op de server.",
-      "dialog-description": "Voeg een sleutel toe vanuit uw eigen provideraccount. Memos gebruikt voor elke provider ingebouwde modellen; laat de API-sleutel leeg tijdens het bewerken om de opgeslagen sleutel te behouden.",
+      "dialog-description": "Voeg een sleutel toe vanuit uw eigen provideraccount. Quicktext gebruikt voor elke provider ingebouwde modellen; laat de API-sleutel leeg tijdens het bewerken om de opgeslagen sleutel te behouden.",
       "edit-provider": "Aanbieder bewerken",
       "endpoint": "Eindpunt",
       "endpoint-hint": "Laat dit leeg om het officiële eindpunt van de provider te gebruiken.",
@@ -759,7 +759,7 @@
     "all-tags": "Alle labels",
     "create-tag": "Label aanmaken",
     "create-tags-guide": "Je kunt labels aanmaken door `#label` in te voeren.",
-    "delete-confirm": "Weet je zeker dat je dit label wilt verwijderen? Alle gerelateerde memos worden gearchiveerd.",
+    "delete-confirm": "Weet je zeker dat je dit label wilt verwijderen? Alle gerelateerde Quicktext worden gearchiveerd.",
     "delete-success": "Label succesvol verwijderd",
     "delete-tag": "Label verwijderen",
     "new-name": "Nieuwe naam",
@@ -769,7 +769,7 @@
     "rename-error-repeat": "Nieuwe naam mag niet hetzelfde zijn als de oude naam",
     "rename-success": "Label succesvol hernoemd",
     "rename-tag": "Label hernoemen",
-    "rename-tip": "Al je memos met dit label worden automatisch bijgewerkt."
+    "rename-tip": "Al je Quicktext met dit label worden automatisch bijgewerkt."
   },
   "tooltip": {
     "link-memo": "Memo linken",
@@ -781,8 +781,8 @@
   },
   "demo": {
     "banner-description": "Wijzigingen zijn tijdelijk en kunnen worden gereset.",
-    "banner-title": "Memos-demo",
-    "deploy-link": "Implementeer uw Memos"
+    "banner-title": "Quicktext-demo",
+    "deploy-link": "Implementeer uw Quicktext"
   },
   "attachment-library": {
     "actions": {

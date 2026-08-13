@@ -20,13 +20,18 @@ function parseDate(value: string): Date | undefined {
 const TimestampInput: FC<{
   label: string;
   date: Date | undefined;
-  onChange: (date: Date) => void;
+  onChange: (date: Date | undefined) => void;
 }> = ({ label, date, onChange }) => {
   const initialValue = useRef(date ? formatDate(date) : "");
   const [value, setValue] = useState(initialValue.current);
   const [invalid, setInvalid] = useState(false);
 
   const handleBlur = () => {
+    if (value.trim() === "") {
+      setInvalid(false);
+      onChange(undefined);
+      return;
+    }
     const parsed = parseDate(value);
     if (parsed) {
       setInvalid(false);
@@ -60,6 +65,7 @@ export const TimestampPopover: FC = () => {
   const { actions, dispatch } = useEditorContext();
   const createTime = useEditorSelector((s) => s.timestamps.createTime);
   const updateTime = useEditorSelector((s) => s.timestamps.updateTime);
+  const alarmTime = useEditorSelector((s) => s.timestamps.alarmTime);
 
   if (!createTime) return null;
 
@@ -74,6 +80,7 @@ export const TimestampPopover: FC = () => {
         }
       >
         {formatDate(createTime)}
+        {alarmTime && <span className="ml-2 text-primary">(Alarm set)</span>}
       </PopoverTrigger>
       <PopoverContent align="start" className="w-auto p-2 pt-1 space-y-1">
         <TimestampInput
@@ -86,6 +93,7 @@ export const TimestampPopover: FC = () => {
           date={updateTime}
           onChange={(d) => dispatch(actions.setTimestamps({ updateTime: d }))}
         />
+        <TimestampInput label={"Alarm Time"} date={alarmTime} onChange={(d) => dispatch(actions.setTimestamps({ alarmTime: d }))} />
       </PopoverContent>
     </Popover>
   );

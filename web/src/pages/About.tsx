@@ -7,9 +7,9 @@ import { useTranslate } from "@/utils/i18n";
 const GITHUB_COMMIT_URL_PREFIX = "https://github.com/usememos/memos/commit/";
 const GITHUB_RELEASE_URL_PREFIX = "https://github.com/usememos/memos/releases/tag/v";
 
-const DEFAULT_TITLE = "Memos";
+const DEFAULT_TITLE = "Quicktext";
 const DEFAULT_TAGLINE = "Capture first. Keep it yours.";
-const DEFAULT_LOGO = "/logo.webp";
+const DEFAULT_LOGO = "/logo.png";
 
 const isCommitSha = (commit: string) => /^[0-9a-f]{7,40}$/i.test(commit);
 const isSemver = (version: string) => /^\d+\.\d+\.\d+/.test(version);

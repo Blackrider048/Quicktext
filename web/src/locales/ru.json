@@ -17,7 +17,7 @@
     "sign-up-tip": "У вас еще нет учетной записи?"
   },
   "common": {
-    "about": "О Memos",
+    "about": "О Quicktext",
     "add": "Добавить",
     "admin": "Администратор",
     "all": "Все",
@@ -69,7 +69,7 @@
     "map": "Карта",
     "mark": "Связать",
     "memo": "Заметка",
-    "memos": "Заметки",
+    "Quicktext": "Заметки",
     "more": "Еще",
     "name": "Название",
     "new": "Новая запись",
@@ -194,7 +194,7 @@
     },
     "copy-content": "Копировать контент",
     "copy-link": "Скопировать ссылку",
-    "count-memos-in-date": "{{count}} {{memos}} за {{date}}",
+    "count-Quicktext-in-date": "{{count}} {{Quicktext}} за {{date}}",
     "delete-confirm": "Вы уверены, что хотите удалить эту запись?\nЭТО ДЕЙСТВИЕ НЕЛЬЗЯ ОТМЕНИТЬ!",
     "delete-confirm-description": "Это действие нельзя отменить. Вложения, ссылки и упоминания также будут удалены.",
     "direction": "Сортировка",
@@ -212,8 +212,8 @@
     "link-preview": "Предпросмотр ссылок",
     "links": "Ссылки",
     "load-more": "Загрузить еще",
-    "no-archived-memos": "Нет заархивированных записей.",
-    "no-memos": "Нет заметок.",
+    "no-archived-Quicktext": "Нет заархивированных записей.",
+    "no-Quicktext": "Нет заметок.",
     "order-by": "Сортировать по",
     "outline": "Схема",
     "search-placeholder": "Поиск записей",
@@ -245,7 +245,7 @@
       "image-download": "Скачать PNG",
       "image-download-failed": "Не удалось экспортировать изображение.",
       "image-downloaded": "Изображение сохранено.",
-      "image-footer": "Совместно с Memos",
+      "image-footer": "Совместно с Quicktext",
       "image-share": "Поделиться изображением",
       "image-share-failed": "Не удалось поделиться изображением.",
       "image-title": "Поделиться как изображением",
@@ -261,7 +261,7 @@
       "protected": "Видно только авторизованным пользователям",
       "public": "Публичная"
     },
-    "count-memos-updated-in-date": "{{count}} {{memos}} обновлен на {{date}}",
+    "count-Quicktext-updated-in-date": "{{count}} {{Quicktext}} обновлен на {{date}}",
     "newest-first": "Сначала самые новые",
     "oldest-first": "Сначала самый старый",
     "order": "Заказ",
@@ -297,7 +297,7 @@
   "reference": {
     "add-references": "Добавить связь",
     "embedded-usage": "Вставить контент",
-    "no-memos-found": "Ничего не найдено",
+    "no-Quicktext-found": "Ничего не найдено",
     "search-placeholder": "Поиск по содержимому"
   },
   "resource": {
@@ -367,10 +367,10 @@
     "account": {
       "change-password": "Изменить пароль",
       "email-note": "Опционально",
-      "export-memos": "Экспорт заметок",
+      "export-Quicktext": "Экспорт заметок",
       "nickname-note": "Отображается в системе",
       "openapi-reset": "Очистить ключ OpenAPI",
-      "openapi-sample-post": "Привет #memos от {{url}}",
+      "openapi-sample-post": "Привет #Quicktext от {{url}}",
       "openapi-title": "OpenAPI",
       "reset-api": "Очистить API",
       "title": "Информация об аккаунте",
@@ -660,10 +660,10 @@
       "add-provider": "Добавить провайдера",
       "api-key": "Ключ API",
       "api-key-required": "Требуется ключ API.",
-      "byok-description": "Подключите OpenAI или Gemini с помощью ключа API из своей учетной записи. Memos звонит провайдеру напрямую с этого сервера.",
-      "byok-key-note": "Используйте ключ от учетной записи провайдера; Memos не объединяет общие учетные данные AI.",
+      "byok-description": "Подключите OpenAI или Gemini с помощью ключа API из своей учетной записи. Quicktext звонит провайдеру напрямую с этого сервера.",
+      "byok-key-note": "Используйте ключ от учетной записи провайдера; Quicktext не объединяет общие учетные данные AI.",
       "byok-label": "BYOK",
-      "byok-model-note": "Memos выбирает поддерживаемые модели для таких функций, как транскрипция звука.",
+      "byok-model-note": "Quicktext выбирает поддерживаемые модели для таких функций, как транскрипция звука.",
       "byok-storage-note": "Ключи остаются в этом экземпляре и маскируются при загрузке настроек.",
       "byok-title": "Используйте свою собственную учетную запись AI",
       "configured": "Настроено",
@@ -671,7 +671,7 @@
       "default-endpoint": "Конечная точка по умолчанию",
       "delete-provider": "Удалить провайдера AI `{{title}}`?",
       "description": "Ключи поставщика предоставляются владельцем экземпляра и используются серверными функциями AI.",
-      "dialog-description": "Добавьте ключ от собственной учетной записи провайдера. Memos использует встроенные модели для каждого провайдера; оставьте ключ API пустым во время редактирования, чтобы сохранить сохраненный ключ.",
+      "dialog-description": "Добавьте ключ от собственной учетной записи провайдера. Quicktext использует встроенные модели для каждого провайдера; оставьте ключ API пустым во время редактирования, чтобы сохранить сохраненный ключ.",
       "edit-provider": "Изменить поставщика",
       "endpoint": "Конечная точка",
       "endpoint-hint": "Оставьте пустым, чтобы использовать конечную точку официального поставщика.",
@@ -781,8 +781,8 @@
   },
   "demo": {
     "banner-description": "Изменения носят временный характер и могут быть сброшены.",
-    "banner-title": "Memos демо",
-    "deploy-link": "Разверните свой Memos"
+    "banner-title": "Quicktext демо",
+    "deploy-link": "Разверните свой Quicktext"
   },
   "attachment-library": {
     "actions": {

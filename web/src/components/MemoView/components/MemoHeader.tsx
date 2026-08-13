@@ -1,18 +1,21 @@
-import { BookmarkIcon } from "lucide-react";
-import { useCallback, useState } from "react";
+import { BellIcon, BookmarkIcon, CopyIcon, ListChecksIcon, ListRestartIcon } from "lucide-react";
+import { useCallback } from "react";
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import RelativeTime from "@/components/RelativeTime";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { useNewMemo } from "@/contexts/NewMemoContext";
+import { useUpdateMemo } from "@/hooks/useMemoQueries";
 import useNavigateTo from "@/hooks/useNavigateTo";
+import { useReminders } from "@/hooks/useReminders";
 import i18n from "@/i18n";
 import { cn } from "@/lib/utils";
 import { Visibility } from "@/types/proto/api/v1/memo_service_pb";
 import type { User } from "@/types/proto/api/v1/user_service_pb";
 import { useTranslate } from "@/utils/i18n";
+import { checkAllTasks, uncheckAllTasks } from "@/utils/markdown-task-actions";
 import { convertVisibilityToString } from "@/utils/memo";
 import MemoActionMenu from "../../MemoActionMenu";
-import { ReactionSelector } from "../../MemoReactionListView";
 import UserAvatar from "../../UserAvatar";
 import VisibilityIcon from "../../VisibilityIcon";
 import { useMemoActions } from "../hooks";
@@ -21,11 +24,11 @@ import type { MemoHeaderProps } from "../types";
 
 const MemoHeader: React.FC<MemoHeaderProps> = ({ showCreator, showVisibility, showPinned }) => {
   const t = useTranslate();
-  const [reactionSelectorOpen, setReactionSelectorOpen] = useState(false);
 
-  const { memo, creator, currentUser, parentPage, isArchived, readonly, openEditor } = useMemoViewContext();
+  const { memo, creator, parentPage, isArchived, readonly, openEditor } = useMemoViewContext();
   const { createTime, updateTime, displayTime: memoDisplayTime, isDisplayingUpdatedTime, relativeTimeFormat } = useMemoViewDerived();
   const { newMemoName } = useNewMemo();
+  const { hasReminder, toggleReminder } = useReminders();
 
   const navigateTo = useNavigateTo();
   const handleGotoMemoDetailPage = useCallback(() => {
@@ -33,6 +36,43 @@ const MemoHeader: React.FC<MemoHeaderProps> = ({ showCreator, showVisibility, sh
   }, [memo.name, parentPage, navigateTo]);
 
   const { unpinMemo } = useMemoActions(memo);
+
+  const handleCopy = useCallback(() => {
+    navigator.clipboard
+      .writeText(memo.content)
+      .then(() => {
+        toast.success(t("message.succeed-copy-content"));
+      })
+      .catch(() => {
+        toast.error("Failed to copy");
+      });
+  }, [memo.content, t]);
+
+  const { mutateAsync: updateMemo } = useUpdateMemo();
+
+  const handleCheckAllTasks = useCallback(async () => {
+    try {
+      await updateMemo({
+        update: { name: memo.name, content: checkAllTasks(memo.content) },
+        updateMask: ["content", "update_time"],
+      });
+      toast.success(t("memo.task-actions.updated"));
+    } catch {
+      toast.error("An error occurred");
+    }
+  }, [memo.name, memo.content, updateMemo, t]);
+
+  const handleUncheckAllTasks = useCallback(async () => {
+    try {
+      await updateMemo({
+        update: { name: memo.name, content: uncheckAllTasks(memo.content) },
+        updateMask: ["content", "update_time"],
+      });
+      toast.success(t("memo.task-actions.updated"));
+    } catch {
+      toast.error("An error occurred");
+    }
+  }, [memo.name, memo.content, updateMemo, t]);
 
   const timeValue = isArchived ? (
     memoDisplayTime?.toLocaleString(i18n.language)
@@ -70,14 +110,6 @@ const MemoHeader: React.FC<MemoHeaderProps> = ({ showCreator, showVisibility, sh
       </div>
 
       <div className="flex flex-row justify-end items-center select-none shrink-0 gap-2">
-        {currentUser && !isArchived && (
-          <ReactionSelector
-            className={cn("border-none w-auto h-auto", reactionSelectorOpen && "block!", "block sm:hidden sm:group-hover:block")}
-            memo={memo}
-            onOpenChange={setReactionSelectorOpen}
-          />
-        )}
-
         {showVisibility && memo.visibility !== Visibility.PRIVATE && (
           <Tooltip>
             <TooltipTrigger>
@@ -102,6 +134,66 @@ const MemoHeader: React.FC<MemoHeaderProps> = ({ showCreator, showVisibility, sh
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
+        )}
+
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger render={<span className="cursor-pointer" />}>
+              <BellIcon
+                className={cn(
+                  "w-4 h-auto transition-colors",
+                  hasReminder(memo.name) ? "text-primary" : "text-muted-foreground hover:text-foreground",
+                )}
+                onClick={() => {
+                  toggleReminder(memo.name);
+                  if (!hasReminder(memo.name)) {
+                    toast.success("Alarm set for tomorrow!");
+                  } else {
+                    toast.success("Alarm removed");
+                  }
+                }}
+              />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{hasReminder(memo.name) ? "Remove Alarm" : "Set Alarm"}</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+
+        <Tooltip>
+          <TooltipTrigger render={<span className="cursor-pointer flex items-center justify-center rounded-md hover:opacity-80" />}>
+            <CopyIcon className="w-4 h-auto text-muted-foreground hover:text-foreground transition-colors" onClick={handleCopy} />
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>{t("common.copy")}</p>
+          </TooltipContent>
+        </Tooltip>
+
+        {Boolean(memo.property?.hasTaskList) && !readonly && (
+          <>
+            <Tooltip>
+              <TooltipTrigger render={<span className="cursor-pointer flex items-center justify-center rounded-md hover:opacity-80" />}>
+                <ListChecksIcon
+                  className="w-4 h-auto text-muted-foreground hover:text-foreground transition-colors"
+                  onClick={handleCheckAllTasks}
+                />
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{t("memo.task-actions.check-all")}</p>
+              </TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger render={<span className="cursor-pointer flex items-center justify-center rounded-md hover:opacity-80" />}>
+                <ListRestartIcon
+                  className="w-4 h-auto text-muted-foreground hover:text-foreground transition-colors"
+                  onClick={handleUncheckAllTasks}
+                />
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{t("memo.task-actions.uncheck-all")}</p>
+              </TooltipContent>
+            </Tooltip>
+          </>
         )}
 
         <MemoActionMenu memo={memo} readonly={readonly} onEdit={openEditor} />

@@ -127,6 +127,9 @@ func (s *APIV1Service) CreateMemo(ctx context.Context, request *v1pb.CreateMemoR
 	if request.Memo.Location != nil {
 		create.Payload.Location = convertLocationToStore(request.Memo.Location)
 	}
+	if request.Memo.AlarmTime != nil {
+		create.Payload.AlarmTime = request.Memo.AlarmTime.AsTime().Unix()
+	}
 
 	preparedAttachments, err := s.prepareMemoAttachments(ctx, user, create, request.Memo.Attachments)
 	if err != nil {
@@ -520,6 +523,16 @@ func (s *APIV1Service) UpdateMemo(ctx context.Context, request *v1pb.UpdateMemoR
 				nextMemo.Payload = &storepb.MemoPayload{}
 			}
 			nextMemo.Payload.Location = convertLocationToStore(request.Memo.Location)
+			update.Payload = nextMemo.Payload
+		} else if path == "alarm_time" {
+			if nextMemo.Payload == nil {
+				nextMemo.Payload = &storepb.MemoPayload{}
+			}
+			if request.Memo.AlarmTime != nil {
+				nextMemo.Payload.AlarmTime = request.Memo.AlarmTime.AsTime().Unix()
+			} else {
+				nextMemo.Payload.AlarmTime = 0
+			}
 			update.Payload = nextMemo.Payload
 		} else if path == "attachments" {
 			attachmentsUpdated = true

@@ -69,7 +69,7 @@
     "map": "Mapa",
     "mark": "Marcar",
     "memo": "Memo",
-    "memos": "Memos",
+    "Quicktext": "Quicktext",
     "more": "Mais",
     "name": "Nome",
     "new": "Novo",
@@ -194,7 +194,7 @@
     },
     "copy-content": "Copiar Conteúdo",
     "copy-link": "Copiar link",
-    "count-memos-in-date": "{{count}} {{memos}} em {{date}}",
+    "count-Quicktext-in-date": "{{count}} {{Quicktext}} em {{date}}",
     "delete-confirm": "Tem a certeza de que quer eliminar este memo?",
     "delete-confirm-description": "Esta ação é irreversível. Os anexos, links e referências também serão removidos.",
     "direction": "Direção",
@@ -212,11 +212,11 @@
     "link-preview": "Pré-visualização de hiperligações",
     "links": "Links",
     "load-more": "Carregar mais",
-    "no-archived-memos": "Não existem memos arquivados.",
-    "no-memos": "Não existem memos.",
+    "no-archived-Quicktext": "Não existem Quicktext arquivados.",
+    "no-Quicktext": "Não existem Quicktext.",
     "order-by": "Ordenar por",
     "outline": "Esboço",
-    "search-placeholder": "Pesquisar memos...",
+    "search-placeholder": "Pesquisar Quicktext...",
     "share": {
       "active-links": "Links de partilha ativos",
       "copied": "Copiado!",
@@ -245,7 +245,7 @@
       "image-download": "BaixarPNG",
       "image-download-failed": "Falha ao exportar imagem",
       "image-downloaded": "Imagem salva",
-      "image-footer": "Compartilhado de Memos",
+      "image-footer": "Compartilhado de Quicktext",
       "image-share": "Compartilhar imagem",
       "image-share-failed": "Falha ao compartilhar imagem",
       "image-title": "Compartilhar como imagem",
@@ -256,12 +256,12 @@
     "to-do": "Tarefas",
     "view-detail": "Ver detalhes",
     "visibility": {
-      "disabled": "Memos públicos estão desativados",
+      "disabled": "Quicktext públicos estão desativados",
       "private": "Privado",
       "protected": "Protegido",
       "public": "Público"
     },
-    "count-memos-updated-in-date": "{{count}} {{memos}} atualizado em {{date}}",
+    "count-Quicktext-updated-in-date": "{{count}} {{Quicktext}} atualizado em {{date}}",
     "newest-first": "O mais novo primeiro",
     "oldest-first": "Mais antigo primeiro",
     "order": "Ordem",
@@ -297,7 +297,7 @@
   "reference": {
     "add-references": "Adicionar referências",
     "embedded-usage": "Usar como conteúdo incorporado",
-    "no-memos-found": "Não foram encontrados memos",
+    "no-Quicktext-found": "Não foram encontrados Quicktext",
     "search-placeholder": "Pesquisar conteúdo"
   },
   "resource": {
@@ -367,10 +367,10 @@
     "account": {
       "change-password": "Alterar palavra-passe",
       "email-note": "Opcional",
-      "export-memos": "Exportar Memos",
+      "export-Quicktext": "Exportar Quicktext",
       "nickname-note": "Exibido no banner",
       "openapi-reset": "Reiniciar Chave OpenAPI",
-      "openapi-sample-post": "Olá #memos de {{url}}",
+      "openapi-sample-post": "Olá #Quicktext de {{url}}",
       "openapi-title": "OpenAPI",
       "reset-api": "Reiniciar API",
       "title": "Informações da Conta",
@@ -422,11 +422,11 @@
     "memo": {
       "content-length-limit": "Limite de comprimento do conteúdo (Bytes)",
       "enable-blur-sensitive-content": "Ativar desfoque de conteúdo sensível (NSFW)",
-      "enable-memo-comments": "Ativar comentários em memos",
-      "enable-memo-location": "Ativar localização em memos",
+      "enable-memo-comments": "Ativar comentários em Quicktext",
+      "enable-memo-location": "Ativar localização em Quicktext",
       "label": "Memo",
       "reactions": "Reações",
-      "title": "Definições relacionadas com memos",
+      "title": "Definições relacionadas com Quicktext",
       "reactions-required": "A lista de reações não deve estar vazia",
       "add-reaction": "Adicionar reação",
       "bytes-unit": "bytes",
@@ -443,8 +443,8 @@
       "label": "A Minha Conta"
     },
     "preference": {
-      "default-memo-sort-option": "Ordenação padrão dos memos",
-      "default-memo-visibility": "Visibilidade padrão dos memos",
+      "default-memo-sort-option": "Ordenação padrão dos Quicktext",
+      "default-memo-visibility": "Visibilidade padrão dos Quicktext",
       "label": "Preferências",
       "theme": "Tema",
       "appearance-description": "Escolha a aparência do aplicativo e qual idioma ele usa para sua conta.",
@@ -660,10 +660,10 @@
       "add-provider": "Adicionar provedor",
       "api-key": "Chave API",
       "api-key-required": "A chave API é necessária.",
-      "byok-description": "Conecte OpenAI ou Gemini com uma chave API de sua própria conta. Memos chama o provedor diretamente deste servidor.",
-      "byok-key-note": "Use uma chave da conta do seu provedor; Memos não agrupa credenciais AI compartilhadas.",
+      "byok-description": "Conecte OpenAI ou Gemini com uma chave API de sua própria conta. Quicktext chama o provedor diretamente deste servidor.",
+      "byok-key-note": "Use uma chave da conta do seu provedor; Quicktext não agrupa credenciais AI compartilhadas.",
       "byok-label": "BYOK",
-      "byok-model-note": "Memos seleciona modelos suportados para recursos como transcrição de áudio.",
+      "byok-model-note": "Quicktext seleciona modelos suportados para recursos como transcrição de áudio.",
       "byok-storage-note": "As chaves permanecem nesta instância e são mascaradas quando as configurações são carregadas.",
       "byok-title": "Use sua própria conta AI",
       "configured": "Configurada",
@@ -671,7 +671,7 @@
       "default-endpoint": "Ponto de extremidade padrão",
       "delete-provider": "Excluir provedor AI `{{title}}`?",
       "description": "As chaves do provedor são fornecidas pelo proprietário da instância e usadas pelos recursos AI do lado do servidor.",
-      "dialog-description": "Adicione uma chave da sua própria conta de provedor. Memos usa modelos integrados para cada provedor; deixe a chave API em branco durante a edição para manter a chave armazenada.",
+      "dialog-description": "Adicione uma chave da sua própria conta de provedor. Quicktext usa modelos integrados para cada provedor; deixe a chave API em branco durante a edição para manter a chave armazenada.",
       "edit-provider": "Editar provedor",
       "endpoint": "Ponto final",
       "endpoint-hint": "Deixe em branco para usar o endpoint oficial do provedor.",
@@ -759,7 +759,7 @@
     "all-tags": "Todas as Etiquetas",
     "create-tag": "Criar Etiqueta",
     "create-tags-guide": "Pode criar etiquetas digitando `#etiqueta`.",
-    "delete-confirm": "Tem a certeza que quer eliminar esta etiqueta? Todos os memos relacionados serão arquivados.",
+    "delete-confirm": "Tem a certeza que quer eliminar esta etiqueta? Todos os Quicktext relacionados serão arquivados.",
     "delete-success": "Etiqueta eliminada com sucesso",
     "delete-tag": "Eliminar Etiqueta",
     "new-name": "Novo Nome",
@@ -769,7 +769,7 @@
     "rename-error-repeat": "O novo nome não pode ser igual ao antigo",
     "rename-success": "Etiqueta renomeada com sucesso",
     "rename-tag": "Renomear etiqueta",
-    "rename-tip": "Todos os seus memos com esta etiqueta serão atualizados."
+    "rename-tip": "Todos os seus Quicktext com esta etiqueta serão atualizados."
   },
   "tooltip": {
     "link-memo": "Associar Memo",
@@ -781,8 +781,8 @@
   },
   "demo": {
     "banner-description": "As alterações são temporárias e podem ser redefinidas.",
-    "banner-title": "Demonstração Memos",
-    "deploy-link": "Implante seu Memos"
+    "banner-title": "Demonstração Quicktext",
+    "deploy-link": "Implante seu Quicktext"
   },
   "attachment-library": {
     "actions": {

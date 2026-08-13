@@ -69,7 +69,7 @@
     "map": "Mapa",
     "mark": "Značka",
     "memo": "Poznámka",
-    "memos": "Poznámky",
+    "Quicktext": "Poznámky",
     "more": "Více",
     "name": "Jméno",
     "new": "Nový",
@@ -194,7 +194,7 @@
     },
     "copy-content": "Kopírovat obsah",
     "copy-link": "Kopírovat odkaz",
-    "count-memos-in-date": "{{count}} {{memos}} v {{date}}",
+    "count-Quicktext-in-date": "{{count}} {{Quicktext}} v {{date}}",
     "delete-confirm": "Opravdu chcete smazat tuto poznámku?",
     "delete-confirm-description": "Tato akce je nevratná. Přílohy, odkazy a reference budou také odstraněny.",
     "direction": "Směr",
@@ -212,8 +212,8 @@
     "link-preview": "Náhled odkazu",
     "links": "Odkazy",
     "load-more": "Načíst více",
-    "no-archived-memos": "Žádné archivované poznámky.",
-    "no-memos": "Žádné poznámky.",
+    "no-archived-Quicktext": "Žádné archivované poznámky.",
+    "no-Quicktext": "Žádné poznámky.",
     "order-by": "Řadit dle",
     "outline": "Obrys",
     "search-placeholder": "Hledat poznámky...",
@@ -245,7 +245,7 @@
       "image-download": "Stáhněte si PNG",
       "image-download-failed": "Export obrázku se nezdařil",
       "image-downloaded": "Obrázek uložen",
-      "image-footer": "Sdíleno z Memos",
+      "image-footer": "Sdíleno z Quicktext",
       "image-share": "Sdílet obrázek",
       "image-share-failed": "Sdílení obrázku se nezdařilo",
       "image-title": "Sdílet jako obrázek",
@@ -261,7 +261,7 @@
       "protected": "Chráněná",
       "public": "Veřejná"
     },
-    "count-memos-updated-in-date": "{{count}} {{memos}} aktualizováno na {{date}}",
+    "count-Quicktext-updated-in-date": "{{count}} {{Quicktext}} aktualizováno na {{date}}",
     "newest-first": "Nejdříve nejnovější",
     "oldest-first": "Nejdříve nejstarší",
     "order": "Objednávka",
@@ -297,7 +297,7 @@
   "reference": {
     "add-references": "Přidat odkazy",
     "embedded-usage": "Použít jako vložený obsah",
-    "no-memos-found": "Žádné poznámky nenalezeny",
+    "no-Quicktext-found": "Žádné poznámky nenalezeny",
     "search-placeholder": "Vyhledat obsah"
   },
   "resource": {
@@ -367,10 +367,10 @@
     "account": {
       "change-password": "Změnit heslo",
       "email-note": "Volitelné",
-      "export-memos": "Exportovat poznámky",
+      "export-Quicktext": "Exportovat poznámky",
       "nickname-note": "Zobrazeno v banneru",
       "openapi-reset": "Resetovat OpenAPI klíč",
-      "openapi-sample-post": "Ahoj #memos z {{url}}",
+      "openapi-sample-post": "Ahoj #Quicktext z {{url}}",
       "openapi-title": "OpenAPI",
       "reset-api": "Resetovat API",
       "title": "Informace o účtu",
@@ -660,10 +660,10 @@
       "add-provider": "Přidat poskytovatele",
       "api-key": "klíč API",
       "api-key-required": "Je vyžadován klíč API.",
-      "byok-description": "Připojte OpenAI nebo Gemini pomocí klíče API z vašeho vlastního účtu. Memos volá poskytovatele přímo z tohoto serveru.",
-      "byok-key-note": "Použijte klíč z účtu poskytovatele; Memos nesdružuje sdílené přihlašovací údaje AI.",
+      "byok-description": "Připojte OpenAI nebo Gemini pomocí klíče API z vašeho vlastního účtu. Quicktext volá poskytovatele přímo z tohoto serveru.",
+      "byok-key-note": "Použijte klíč z účtu poskytovatele; Quicktext nesdružuje sdílené přihlašovací údaje AI.",
       "byok-label": "BYOK",
-      "byok-model-note": "Memos vybírá podporované modely pro funkce, jako je přepis zvuku.",
+      "byok-model-note": "Quicktext vybírá podporované modely pro funkce, jako je přepis zvuku.",
       "byok-storage-note": "Klíče zůstávají v této instanci a jsou maskovány při načítání nastavení.",
       "byok-title": "Použijte svůj vlastní účet AI",
       "configured": "Nakonfigurováno",
@@ -671,7 +671,7 @@
       "default-endpoint": "Výchozí koncový bod",
       "delete-provider": "Smazat poskytovatele AI `{{title}}`?",
       "description": "Klíče poskytovatele dodává vlastník instance a používají je funkce AI na straně serveru.",
-      "dialog-description": "Přidejte klíč ze svého vlastního účtu poskytovatele. Memos používá vestavěné modely pro každého poskytovatele; ponechejte klávesu API při úpravách prázdnou, aby se zachoval uložený klíč.",
+      "dialog-description": "Přidejte klíč ze svého vlastního účtu poskytovatele. Quicktext používá vestavěné modely pro každého poskytovatele; ponechejte klávesu API při úpravách prázdnou, aby se zachoval uložený klíč.",
       "edit-provider": "Upravit poskytovatele",
       "endpoint": "Koncový bod",
       "endpoint-hint": "Chcete-li použít oficiální koncový bod poskytovatele, ponechte prázdné.",
@@ -781,8 +781,8 @@
   },
   "demo": {
     "banner-description": "Změny jsou dočasné a lze je resetovat.",
-    "banner-title": "Memos demo",
-    "deploy-link": "Nasaďte svůj Memos"
+    "banner-title": "Quicktext demo",
+    "deploy-link": "Nasaďte svůj Quicktext"
   },
   "attachment-library": {
     "actions": {

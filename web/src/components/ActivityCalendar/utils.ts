@@ -64,10 +64,10 @@ export const getTooltipText = (count: number, date: string, t: TranslateFunction
     return date;
   }
 
-  const key = timeBasis === "update_time" ? "memo.count-memos-updated-in-date" : "memo.count-memos-in-date";
+  const key = timeBasis === "update_time" ? "memo.count-Quicktext-updated-in-date" : "memo.count-Quicktext-in-date";
   return t(key, {
     count,
-    memos: count === 1 ? t("common.memo") : t("common.memos"),
+    memos: t("common.Quicktext"),
     date,
   }).toLowerCase();
 };

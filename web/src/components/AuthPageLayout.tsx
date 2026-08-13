@@ -62,7 +62,7 @@ const AuthPageLayout = ({ chip, title, subtitle, hideExplore, children }: Props)
       <div className="w-full grow flex flex-col justify-center items-center">
         <div className="w-90 max-w-full rounded-xl border border-border bg-card p-7 shadow-sm">
           <div className="mb-6 flex items-center gap-2">
-            <img className="h-6 w-auto rounded-full" src={generalSetting.customProfile?.logoUrl || "/logo.webp"} alt="" />
+            <img className="h-6 w-auto rounded-full" src={generalSetting.customProfile?.logoUrl || "/logo.png"} alt="" />
             <span className="text-sm font-semibold text-foreground">{generalSetting.customProfile?.title || "Memos"}</span>
           </div>
           {chip && <div className="mb-2">{chip}</div>}
@@ -77,7 +77,7 @@ const AuthPageLayout = ({ chip, title, subtitle, hideExplore, children }: Props)
                 viewTransition
               >
                 <CompassIcon className="h-3.5 w-3.5" />
-                {t("auth.explore-public-memos")}
+                {t("auth.explore-public-Quicktext")}
                 <ArrowRightIcon className="-ml-1 h-3.5 w-3.5 opacity-0 transition-all group-hover:ml-0 group-hover:opacity-100" />
               </Link>
             </div>

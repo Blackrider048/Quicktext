@@ -68,7 +68,7 @@
     "map": "แผนที่",
     "mark": "ทำเครื่องหมาย",
     "memo": "บันทึกช่วยจำ",
-    "memos": "บันทึกช่วยจำ",
+    "Quicktext": "บันทึกช่วยจำ",
     "more": "เพิ่มเติม",
     "name": "ชื่อ",
     "new": "ใหม่",
@@ -180,7 +180,7 @@
     },
     "copy-content": "คัดลอกเนื้อหา",
     "copy-link": "คัดลอกลิงก์",
-    "count-memos-in-date": "{{count}} {{memos}} ใน {{date}}",
+    "count-Quicktext-in-date": "{{count}} {{Quicktext}} ใน {{date}}",
     "delete-confirm": "คุณแน่ใจหรือไม่ ว่าต้องการลบบันทึกนี้? การกระทำนี้ไม่สามารถย้อนกลับได้",
     "delete-confirm-description": "การดำเนินการนี้ไม่สามารถย้อนกลับได้ ไฟล์แนบ ลิงก์ และการอ้างอิงจะถูกลบออกด้วย",
     "direction": "ทิศทาง",
@@ -198,8 +198,8 @@
     "link-preview": "ตัวอย่างลิงก์",
     "links": "ลิงก์",
     "load-more": "โหลดเพิ่มเติม",
-    "no-archived-memos": "ไม่มีบันทึกช่วยจำที่ถูกเก็บถาวร",
-    "no-memos": "ไม่มีบันทึกช่วยจำ",
+    "no-archived-Quicktext": "ไม่มีบันทึกช่วยจำที่ถูกเก็บถาวร",
+    "no-Quicktext": "ไม่มีบันทึกช่วยจำ",
     "order-by": "เรียงตาม",
     "search-placeholder": "ค้นหาบันทึกช่วยจำ...",
     "show-less": "แสดงน้อยลง",
@@ -263,7 +263,7 @@
   "reference": {
     "add-references": "เพิ่มข้อมูลอ้างอิง",
     "embedded-usage": "ใช้เป็นเนื้อหาแบบฝัง",
-    "no-memos-found": "ไม่พบบันทึกช่วยจำ",
+    "no-Quicktext-found": "ไม่พบบันทึกช่วยจำ",
     "search-placeholder": "ค้นหาเนื้อหา"
   },
   "resource": {
@@ -451,7 +451,7 @@
     "account": {
       "change-password": "เปลี่ยนรหัสผ่าน",
       "email-note": "ไม่บังคับ",
-      "export-memos": "ส่งออกบันทึกช่วยจำ",
+      "export-Quicktext": "ส่งออกบันทึกช่วยจำ",
       "nickname-note": "แสดงในแบนเนอร์",
       "openapi-reset": "รีเซ็ตคีย์ OpenAPI",
       "openapi-sample-post": "สวัสดี #บันทึกจาก {{url}}",

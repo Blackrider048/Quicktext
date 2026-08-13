@@ -69,7 +69,7 @@
     "map": "Map",
     "mark": "Mark",
     "memo": "Memo",
-    "memos": "Memos",
+    "Quicktext": "Quicktext",
     "more": "More",
     "name": "Name",
     "new": "New",
@@ -194,7 +194,7 @@
     },
     "copy-content": "Copy Content",
     "copy-link": "Copy Link",
-    "count-memos-in-date": "{{count}} {{memos}} in {{date}}",
+    "count-Quicktext-in-date": "{{count}} {{Quicktext}} in {{date}}",
     "delete-confirm": "Are you sure you want to delete this memo?",
     "delete-confirm-description": "This action is irreversible. Attachments, links, and references will also be removed.",
     "direction": "Direction",
@@ -212,11 +212,11 @@
     "link-preview": "Link preview",
     "links": "Links",
     "load-more": "Load more",
-    "no-archived-memos": "No archived memos.",
-    "no-memos": "No memos.",
+    "no-archived-Quicktext": "No archived Quicktext.",
+    "no-Quicktext": "No Quicktext.",
     "order-by": "Order By",
     "outline": "Outline",
-    "search-placeholder": "Search memos...",
+    "search-placeholder": "Search Quicktext...",
     "share": {
       "active-links": "Active share links",
       "copied": "Copied!",
@@ -245,7 +245,7 @@
       "image-download": "Download PNG",
       "image-download-failed": "Failed to export image",
       "image-downloaded": "Image saved",
-      "image-footer": "Shared from Memos",
+      "image-footer": "Shared from Quicktext",
       "image-share": "Share image",
       "image-share-failed": "Failed to share image",
       "image-title": "Share as image",
@@ -256,12 +256,12 @@
     "to-do": "To-do",
     "view-detail": "View Detail",
     "visibility": {
-      "disabled": "Public memos are disabled",
+      "disabled": "Public Quicktext are disabled",
       "private": "Private",
       "protected": "Protected",
       "public": "Public"
     },
-    "count-memos-updated-in-date": "{{count}} {{memos}} updated on {{date}}",
+    "count-Quicktext-updated-in-date": "{{count}} {{Quicktext}} updated on {{date}}",
     "newest-first": "Newest first",
     "oldest-first": "Oldest first",
     "order": "Order",
@@ -297,7 +297,7 @@
   "reference": {
     "add-references": "Add references",
     "embedded-usage": "Use as Embedded Content",
-    "no-memos-found": "No memos found",
+    "no-Quicktext-found": "No Quicktext found",
     "search-placeholder": "Search content"
   },
   "resource": {
@@ -367,10 +367,10 @@
     "account": {
       "change-password": "Change password",
       "email-note": "Optional",
-      "export-memos": "Export Memos",
+      "export-Quicktext": "Export Quicktext",
       "nickname-note": "Displayed in the banner",
       "openapi-reset": "Reset OpenAPI Key",
-      "openapi-sample-post": "Hello #memos from {{url}}",
+      "openapi-sample-post": "Hello #Quicktext from {{url}}",
       "openapi-title": "OpenAPI",
       "reset-api": "Reset API",
       "title": "Account Information",
@@ -436,7 +436,7 @@
       "editing-description": "Control memo editing behaviour and server-side content limits.",
       "editing-title": "Editing",
       "reaction-placeholder": "e.g. 👍",
-      "reactions-description": "Define the reaction options users can apply to memos.",
+      "reactions-description": "Define the reaction options users can apply to Quicktext.",
       "remove-reaction": "Remove reaction"
     },
     "my-account": {
@@ -449,9 +449,9 @@
       "theme": "Theme",
       "appearance-description": "Choose how the app looks and which language it uses for your account.",
       "appearance-title": "Appearance",
-      "default-memo-visibility-description": "Visibility applied to newly created memos unless changed in the editor.",
+      "default-memo-visibility-description": "Visibility applied to newly created Quicktext unless changed in the editor.",
       "language-description": "Updates the interface language immediately and saves it to your account.",
-      "memo-defaults-description": "Set the defaults used when composing new memos.",
+      "memo-defaults-description": "Set the defaults used when composing new Quicktext.",
       "memo-defaults-title": "Memo defaults",
       "theme-description": "Applies the selected theme immediately on this device."
     },
@@ -654,16 +654,16 @@
       "configured-rules": "Configured rules",
       "default-color": "Default",
       "matching-rule": "Anchored regex",
-      "used-count": "{{count}} memos"
+      "used-count": "{{count}} Quicktext"
     },
     "ai": {
       "add-provider": "Add provider",
       "api-key": "API key",
       "api-key-required": "API key is required.",
-      "byok-description": "Connect OpenAI or Gemini with an API key from your own account. Memos calls the provider directly from this server.",
-      "byok-key-note": "Use a key from your provider account; Memos does not bundle shared AI credentials.",
+      "byok-description": "Connect OpenAI or Gemini with an API key from your own account. Quicktext calls the provider directly from this server.",
+      "byok-key-note": "Use a key from your provider account; Quicktext does not bundle shared AI credentials.",
       "byok-label": "BYOK",
-      "byok-model-note": "Memos selects supported models for features like audio transcription.",
+      "byok-model-note": "Quicktext selects supported models for features like audio transcription.",
       "byok-storage-note": "Keys stay on this instance and are masked when settings are loaded.",
       "byok-title": "Use your own AI account",
       "configured": "Configured",
@@ -671,7 +671,7 @@
       "default-endpoint": "Default endpoint",
       "delete-provider": "Delete AI provider `{{title}}`?",
       "description": "Provider keys are supplied by the instance owner and used by server-side AI features.",
-      "dialog-description": "Add a key from your own provider account. Memos uses built-in models for each provider; leave the API key blank while editing to keep the stored key.",
+      "dialog-description": "Add a key from your own provider account. Quicktext uses built-in models for each provider; leave the API key blank while editing to keep the stored key.",
       "edit-provider": "Edit provider",
       "endpoint": "Endpoint",
       "endpoint-hint": "Leave empty to use the official provider endpoint.",
@@ -759,7 +759,7 @@
     "all-tags": "All Tags",
     "create-tag": "Create Tag",
     "create-tags-guide": "You can create tags by inputting `#tag`.",
-    "delete-confirm": "Are you sure you want to delete this tag? All related memos will be archived.",
+    "delete-confirm": "Are you sure you want to delete this tag? All related Quicktext will be archived.",
     "delete-success": "Tag deleted successfully",
     "delete-tag": "Delete Tag",
     "new-name": "New Name",
@@ -769,7 +769,7 @@
     "rename-error-repeat": "New name cannot be the same as the old name",
     "rename-success": "Renamed tag successfully",
     "rename-tag": "Rename tag",
-    "rename-tip": "All your memos with this tag will be updated."
+    "rename-tip": "All your Quicktext with this tag will be updated."
   },
   "tooltip": {
     "link-memo": "Link Memo",
@@ -781,8 +781,8 @@
   },
   "demo": {
     "banner-description": "Feel free to explore! This demo is reset periodically.",
-    "banner-title": "Memos demo",
-    "deploy-link": "Deploy your own Memos"
+    "banner-title": "Quicktext demo",
+    "deploy-link": "Deploy your own Quicktext"
   },
   "attachment-library": {
     "actions": {

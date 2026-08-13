@@ -148,6 +148,30 @@ func (s *APIV1Service) UpdateUserSetting(ctx context.Context, request *v1pb.Upda
 				TagsSetting: incomingTags,
 			},
 		}
+	case storepb.UserSetting_SEARCH_HISTORY:
+		var shouldUpdateSearchHistory bool
+		for _, field := range request.UpdateMask.Paths {
+			switch field {
+			case "search_history":
+				shouldUpdateSearchHistory = true
+			default:
+				return nil, status.Errorf(codes.InvalidArgument, "unsupported update mask path for search history setting: %s", field)
+			}
+		}
+		if !shouldUpdateSearchHistory {
+			return nil, status.Errorf(codes.InvalidArgument, "update mask must include search_history")
+		}
+
+		incomingHistory := request.Setting.GetSearchHistorySetting()
+		if incomingHistory == nil {
+			return nil, status.Errorf(codes.InvalidArgument, "search history setting is required")
+		}
+		updatedSetting = &v1pb.UserSetting{
+			Name: request.Setting.Name,
+			Value: &v1pb.UserSetting_SearchHistorySetting_{
+				SearchHistorySetting: incomingHistory,
+			},
+		}
 	default:
 		return nil, status.Errorf(codes.InvalidArgument, "setting type %s should not be updated via UpdateUserSetting", storeKey.String())
 	}

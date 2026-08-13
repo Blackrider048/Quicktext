@@ -14,15 +14,9 @@ if (process.env.DEV_PROXY_SERVER && process.env.DEV_PROXY_SERVER.length > 0) {
 export default defineConfig({
   plugins: [react(), babel({ presets: [reactCompilerPreset()] }), tailwindcss()],
   server: {
-    host: "0.0.0.0",
+    host: true,
     port: 3001,
     proxy: {
-      "^/api/v1/sse": {
-        target: devProxyServer,
-        xfwd: true,
-        // SSE requires no response buffering and longer timeout.
-        timeout: 0,
-      },
       "^/api": {
         target: devProxyServer,
         xfwd: true,
@@ -39,7 +33,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "@/": `${resolve(__dirname, "src")}/`,
+      "@/": `${resolve(import.meta.dirname, "src")}/`,
     },
   },
   build: {

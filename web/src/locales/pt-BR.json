@@ -68,7 +68,7 @@
     "map": "Mapa",
     "mark": "Vincular",
     "memo": "Memo",
-    "memos": "Memos",
+    "Quicktext": "Quicktext",
     "more": "Mais",
     "name": "Nome",
     "new": "Novo",
@@ -180,7 +180,7 @@
     },
     "copy-content": "Copiar conteúdo",
     "copy-link": "Copiar link",
-    "count-memos-in-date": "{{count}} {{memos}} em {{date}}",
+    "count-Quicktext-in-date": "{{count}} {{Quicktext}} em {{date}}",
     "delete-confirm": "Tem certeza de que deseja deletar este memo?\n\nESTA AÇÃO É IRREVERSÍVEL",
     "delete-confirm-description": "Esta ação é irreversível. Anexos, links e referências também serão removidos.",
     "direction": "Sentido",
@@ -198,16 +198,16 @@
     "link-preview": "Pré-visualização de links",
     "links": "Links",
     "load-more": "Carregar mais",
-    "no-archived-memos": "Nenhum memo arquivado.",
-    "no-memos": "Nenhum memo.",
+    "no-archived-Quicktext": "Nenhum memo arquivado.",
+    "no-Quicktext": "Nenhum memo.",
     "order-by": "Ordenar por",
-    "search-placeholder": "Pesquisar memos...",
+    "search-placeholder": "Pesquisar Quicktext...",
     "show-less": "Mostrar menos",
     "show-more": "Mostrar mais",
     "to-do": "Tarefas",
     "view-detail": "Ver detalhes",
     "visibility": {
-      "disabled": "Memos públicos estão desabilitados",
+      "disabled": "Quicktext públicos estão desabilitados",
       "private": "Privado",
       "protected": "Protegido",
       "public": "Público"
@@ -263,7 +263,7 @@
   "reference": {
     "add-references": "Adicionar referências",
     "embedded-usage": "Usar como Conteúdo Embutido",
-    "no-memos-found": "Nenhum memo encontrado",
+    "no-Quicktext-found": "Nenhum memo encontrado",
     "search-placeholder": "Pesquisar conteúdo"
   },
   "resource": {
@@ -413,7 +413,7 @@
       "disable-password-login": "Desabilitar login com senha",
       "disable-password-login-final-warning": "Por favor, digite \"CONFIRM\" para prosseguir.",
       "disable-password-login-warning": "Isso desabilitará o login com senha para todos os usuários. Caso seus provedores de identidade (SSO) configurados falhem, não será possível fazer login sem reverter esse ajuste manualmente no banco de dados. Você também deverá tomar precauções adicionais ao remover qualquer provedor de identidade!",
-      "display-with-updated-time": "Exibir hora de atualização nos memos",
+      "display-with-updated-time": "Exibir hora de atualização nos Quicktext",
       "enable-auto-compact": "Ativar exibição compacta automaticamente",
       "enable-double-click-to-edit": "Ativar clique duplo para editar",
       "enable-password-login": "Habilitar login com senha",
@@ -451,10 +451,10 @@
     "account": {
       "change-password": "Alterar senha",
       "email-note": "Opcional",
-      "export-memos": "Exportar Memos",
+      "export-Quicktext": "Exportar Quicktext",
       "nickname-note": "Exibido no banner",
       "openapi-reset": "Redefinir chave OpenAPI",
-      "openapi-sample-post": "Olá #memos em {{url}}",
+      "openapi-sample-post": "Olá #Quicktext em {{url}}",
       "openapi-title": "OpenAPI",
       "reset-api": "Redefinir API",
       "title": "Informação da conta",
@@ -474,10 +474,10 @@
     "memo": {
       "content-length-limit": "Limite de tamanho do conteúdo (Bytes)",
       "enable-blur-sensitive-content": "Desfocar conteúdo impróprio (adicione as tags abaixo)",
-      "enable-memo-comments": "Comentários nos memos",
+      "enable-memo-comments": "Comentários nos Quicktext",
       "enable-memo-location": "Marcador de localização",
       "reactions": "Reações",
-      "title": "Ajustes relacionados aos memos",
+      "title": "Ajustes relacionados aos Quicktext",
       "label": "Memo",
       "reactions-required": "A lista de reações não deve estar vazia"
     },
@@ -520,7 +520,7 @@
     "all-tags": "Todas as Tags",
     "create-tag": "Criar Tag",
     "create-tags-guide": "Você pode criar tags inserindo `#tag`.",
-    "delete-confirm": "Tem certeza de que deseja excluir esta tag?\nTodos os memos relacionados serão arquivados.",
+    "delete-confirm": "Tem certeza de que deseja excluir esta tag?\nTodos os Quicktext relacionados serão arquivados.",
     "delete-success": "Tag deletada com êxito",
     "delete-tag": "Excluir Tag",
     "new-name": "Novo Nome",
@@ -530,7 +530,7 @@
     "rename-error-repeat": "O novo nome não pode ser o mesmo que o antigo",
     "rename-success": "Tag renomeada com êxito",
     "rename-tag": "Renomear tag",
-    "rename-tip": "Todos seus memos com essa tag serão atualizados."
+    "rename-tip": "Todos seus Quicktext com essa tag serão atualizados."
   },
   "tooltip": {
     "link-memo": "Vincular Memo",

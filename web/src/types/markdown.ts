@@ -56,7 +56,7 @@ export function isTagElement(node: HastElement): boolean {
   if (Array.isArray(className) && className.includes("tag")) {
     return true;
   }
-  if (typeof className === "string" && className.split(/\s+/).includes("tag")) {
+  if (typeof className === "string" && (className as string).split(/\s+/).includes("tag")) {
     return true;
   }
 
@@ -77,7 +77,7 @@ export function isMentionElement(node: HastElement): boolean {
   if (Array.isArray(className) && className.includes("mention")) {
     return true;
   }
-  if (typeof className === "string" && className.split(/\s+/).includes("mention")) {
+  if (typeof className === "string" && (className as string).split(/\s+/).includes("mention")) {
     return true;
   }
 

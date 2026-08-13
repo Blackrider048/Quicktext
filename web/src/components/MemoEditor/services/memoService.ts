@@ -70,6 +70,18 @@ function buildUpdateMask(
     }
   }
 
+  if (state.timestamps.alarmTime) {
+    const prevAlarmTime = prevMemo.alarmTime ? timestampDate(prevMemo.alarmTime) : undefined;
+    if (!isEqual(state.timestamps.alarmTime, prevAlarmTime)) {
+      mask.add("alarm_time");
+      patch.alarmTime = timestampFromDate(state.timestamps.alarmTime);
+    }
+  } else if (prevMemo.alarmTime) {
+    // alarmTime was cleared
+    mask.add("alarm_time");
+    patch.alarmTime = undefined;
+  }
+
   return { mask, patch };
 }
 
@@ -110,6 +122,7 @@ export const memoService = {
       location: state.metadata.location,
       createTime: state.timestamps.createTime ? timestampFromDate(state.timestamps.createTime) : undefined,
       updateTime: state.timestamps.updateTime ? timestampFromDate(state.timestamps.updateTime) : undefined,
+      alarmTime: state.timestamps.alarmTime ? timestampFromDate(state.timestamps.alarmTime) : undefined,
     });
 
     const memo = options.parentMemoName
@@ -139,6 +152,7 @@ export const memoService = {
       timestamps: {
         createTime: memo.createTime ? timestampDate(memo.createTime) : undefined,
         updateTime: memo.updateTime ? timestampDate(memo.updateTime) : undefined,
+        alarmTime: memo.alarmTime ? timestampDate(memo.alarmTime) : undefined,
       },
     };
   },

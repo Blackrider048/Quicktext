@@ -48,6 +48,9 @@ func (s *APIV1Service) convertMemoFromStoreWithCreators(ctx context.Context, mem
 		memoMessage.Tags = memo.Payload.Tags
 		memoMessage.Property = convertMemoPropertyFromStore(memo.Payload.Property)
 		memoMessage.Location = convertLocationFromStore(memo.Payload.Location)
+		if memo.Payload.AlarmTime != 0 {
+			memoMessage.AlarmTime = timestamppb.New(time.Unix(memo.Payload.AlarmTime, 0))
+		}
 	}
 
 	if memo.ParentUID != nil {

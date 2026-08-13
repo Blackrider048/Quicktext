@@ -69,7 +69,7 @@
     "map": "Kart",
     "mark": "Merk",
     "memo": "Memo",
-    "memos": "Memoer",
+    "Quicktext": "Memoer",
     "more": "Mer",
     "name": "Navn",
     "new": "Ny",
@@ -194,7 +194,7 @@
     },
     "copy-content": "Kopier innhold",
     "copy-link": "Kopier link",
-    "count-memos-in-date": "{{count}} {{memos}} på {{date}}",
+    "count-Quicktext-in-date": "{{count}} {{Quicktext}} på {{date}}",
     "delete-confirm": "Er du sikker på at du vil slette denne memoen? DENNE HANDLINGEN KAN IKKE ANGRES",
     "delete-confirm-description": "Denne handlingen kan ikke angres. Vedlegg, lenker og referanser vil også bli fjernet.",
     "direction": "Retning",
@@ -212,8 +212,8 @@
     "link-preview": "Forhåndsvisning av lenke",
     "links": "Linker",
     "load-more": "Last inn mer",
-    "no-archived-memos": "Ingen arkiverte memoer.",
-    "no-memos": "Ingen memoer.",
+    "no-archived-Quicktext": "Ingen arkiverte memoer.",
+    "no-Quicktext": "Ingen memoer.",
     "order-by": "Sorter etter",
     "outline": "Disposisjon",
     "search-placeholder": "Søk etter memoer...",
@@ -245,7 +245,7 @@
       "image-download": "Last ned PNG",
       "image-download-failed": "Kunne ikke eksportere bildet",
       "image-downloaded": "Bildet er lagret",
-      "image-footer": "Delt fra Memos",
+      "image-footer": "Delt fra Quicktext",
       "image-share": "Del bildet",
       "image-share-failed": "Kunne ikke dele bildet",
       "image-title": "Del som bilde",
@@ -261,7 +261,7 @@
       "protected": "Beskyttet",
       "public": "Offentlig"
     },
-    "count-memos-updated-in-date": "{{count}} {{memos}} oppdatert på {{date}}",
+    "count-Quicktext-updated-in-date": "{{count}} {{Quicktext}} oppdatert på {{date}}",
     "newest-first": "Nyeste først",
     "oldest-first": "Eldste først",
     "order": "Bestille",
@@ -297,7 +297,7 @@
   "reference": {
     "add-references": "Legg til referanser",
     "embedded-usage": "Bruk som innbygd innhold",
-    "no-memos-found": "Ingen memoer funnet",
+    "no-Quicktext-found": "Ingen memoer funnet",
     "search-placeholder": "Søk etter innhold"
   },
   "resource": {
@@ -367,10 +367,10 @@
     "account": {
       "change-password": "Endre passord",
       "email-note": "Valgfritt",
-      "export-memos": "Eksporter memoer",
+      "export-Quicktext": "Eksporter memoer",
       "nickname-note": "Vises i banneret",
       "openapi-reset": "Nullstill OpenAPI-nøkkel",
-      "openapi-sample-post": "Hei #memos fra {{url}}",
+      "openapi-sample-post": "Hei #Quicktext fra {{url}}",
       "openapi-title": "OpenAPI",
       "reset-api": "Nullstill API",
       "title": "Kontoinformasjon",
@@ -660,10 +660,10 @@
       "add-provider": "Legg til leverandør",
       "api-key": "API nøkkel",
       "api-key-required": "API-nøkkel er nødvendig.",
-      "byok-description": "Koble til OpenAI eller Gemini med en API-nøkkel fra din egen konto. Memos ringer leverandøren direkte fra denne serveren.",
-      "byok-key-note": "Bruk en nøkkel fra leverandørkontoen din; Memos pakker ikke delt AI-legitimasjon.",
+      "byok-description": "Koble til OpenAI eller Gemini med en API-nøkkel fra din egen konto. Quicktext ringer leverandøren direkte fra denne serveren.",
+      "byok-key-note": "Bruk en nøkkel fra leverandørkontoen din; Quicktext pakker ikke delt AI-legitimasjon.",
       "byok-label": "BYOK",
-      "byok-model-note": "Memos velger støttede modeller for funksjoner som lydtranskripsjon.",
+      "byok-model-note": "Quicktext velger støttede modeller for funksjoner som lydtranskripsjon.",
       "byok-storage-note": "Nøkler forblir på denne forekomsten og er maskert når innstillingene lastes.",
       "byok-title": "Bruk din egen AI-konto",
       "configured": "Konfigurert",
@@ -671,7 +671,7 @@
       "default-endpoint": "Standard endepunkt",
       "delete-provider": "Vil du slette AI-leverandøren `{{title}}`?",
       "description": "Leverandørnøkler leveres av instanseieren og brukes av AI-funksjoner på serversiden.",
-      "dialog-description": "Legg til en nøkkel fra din egen leverandørkonto. Memos bruker innebygde modeller for hver leverandør; la API-tasten stå tom mens du redigerer for å beholde den lagrede nøkkelen.",
+      "dialog-description": "Legg til en nøkkel fra din egen leverandørkonto. Quicktext bruker innebygde modeller for hver leverandør; la API-tasten stå tom mens du redigerer for å beholde den lagrede nøkkelen.",
       "edit-provider": "Rediger leverandør",
       "endpoint": "Endepunkt",
       "endpoint-hint": "La stå tomt for å bruke det offisielle leverandørens endepunkt.",
@@ -781,8 +781,8 @@
   },
   "demo": {
     "banner-description": "Endringene er midlertidige og kan tilbakestilles.",
-    "banner-title": "Memos demo",
-    "deploy-link": "Distribuer din Memos"
+    "banner-title": "Quicktext demo",
+    "deploy-link": "Distribuer din Quicktext"
   },
   "attachment-library": {
     "actions": {

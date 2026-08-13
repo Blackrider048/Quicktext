@@ -6,6 +6,7 @@ import {
   CodeIcon,
   EyeIcon,
   HashIcon,
+  ImageIcon,
   LinkIcon,
   LucideIcon,
   MapPinIcon,
@@ -58,6 +59,10 @@ const FILTER_CONFIGS: Record<FilterFactor, FilterConfig> = {
   "property.hasLocation": {
     icon: MapPinIcon,
     getLabel: (_, t) => t("memo.filters.has-location"),
+  },
+  has_image: {
+    icon: ImageIcon,
+    getLabel: () => "Images",
   },
 };
 

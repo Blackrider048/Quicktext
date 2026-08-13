@@ -240,6 +240,32 @@ func NewSchema() Schema {
 				CompareNeq: true,
 			},
 		},
+		"has_alarm": {
+			Name:     "has_alarm",
+			Kind:     FieldKindJSONExists,
+			Type:     FieldTypeBool,
+			Column:   Column{Table: "memo", Name: "payload"},
+			JSONPath: []string{"alarmTime"},
+			AllowedComparisonOps: map[ComparisonOperator]bool{
+				CompareEq:  true,
+				CompareNeq: true,
+			},
+		},
+		"has_image": {
+			Name:        "has_image",
+			Kind:        FieldKindScalar,
+			Type:        FieldTypeBool,
+			Column:      Column{Table: "memo", Name: "id"},
+			Expressions: map[DialectName]string{
+				DialectSQLite:   "(EXISTS (SELECT 1 FROM `attachment` WHERE `attachment`.`memo_id` = `memo`.`id` AND `attachment`.`type` LIKE 'image/%'))",
+				DialectMySQL:    "(EXISTS (SELECT 1 FROM `attachment` WHERE `attachment`.`memo_id` = `memo`.`id` AND `attachment`.`type` LIKE 'image/%'))",
+				DialectPostgres: "(EXISTS (SELECT 1 FROM attachment WHERE attachment.memo_id = memo.id AND attachment.type LIKE 'image/%'))",
+			},
+			AllowedComparisonOps: map[ComparisonOperator]bool{
+				CompareEq:  true,
+				CompareNeq: true,
+			},
+		},
 	}
 
 	envOptions := []cel.EnvOption{
@@ -257,6 +283,8 @@ func NewSchema() Schema {
 		cel.Variable("has_code", cel.BoolType),
 		cel.Variable("has_incomplete_tasks", cel.BoolType),
 		cel.Variable("has_location", cel.BoolType),
+		cel.Variable("has_alarm", cel.BoolType),
+		cel.Variable("has_image", cel.BoolType),
 		cel.Variable("now", cel.TimestampType),
 		ext.Sets(),
 		cel.ASTValidators(cel.ValidateRegexLiterals()),

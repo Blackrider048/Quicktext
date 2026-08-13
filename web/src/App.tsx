@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Outlet, ScrollRestoration } from "react-router-dom";
 import { useInstance } from "./contexts/InstanceContext";
+import { useAlarms } from "./hooks/useAlarms";
 import useNavigateTo from "./hooks/useNavigateTo";
 import { useUserLocale } from "./hooks/useUserLocale";
 import { useUserTheme } from "./hooks/useUserTheme";
@@ -9,6 +10,9 @@ import { cleanupExpiredOAuthState } from "./utils/oauth";
 const App = () => {
   const navigateTo = useNavigateTo();
   const { profile: instanceProfile, profileLoaded, generalSetting: instanceGeneralSetting } = useInstance();
+
+  // Start background alarms
+  useAlarms();
 
   // Apply user preferences reactively
   useUserLocale();
@@ -54,7 +58,7 @@ const App = () => {
 
     document.title = instanceGeneralSetting.customProfile.title;
     const link = document.querySelector("link[rel~='icon']") as HTMLLinkElement;
-    link.href = instanceGeneralSetting.customProfile.logoUrl || "/logo.webp";
+    link.href = instanceGeneralSetting.customProfile.logoUrl || "/logo.png";
   }, [instanceGeneralSetting.customProfile]);
 
   return (

@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import { useTranslate } from "@/utils/i18n";
 import { filterInlineManagedAttachments } from "@/utils/managed-attachment";
 import MemoContent from "../../MemoContent";
-import { MemoReactionListView } from "../../MemoReactionListView";
+
 import { useMemoHandlers } from "../hooks";
 import { useMemoViewContext } from "../MemoViewContext";
 import type { MemoBodyProps } from "../types";
@@ -66,7 +66,6 @@ const MemoBody: React.FC<MemoBodyProps> = ({ compact }) => {
           <RelationListView relations={referencedMemos} currentMemoName={memo.name} parentPage={parentPage} />
           {memo.location && <LocationDisplayView location={memo.location} />}
         </ClampedSection>
-        <MemoReactionListView memo={memo} reactions={memo.reactions} />
       </div>
 
       {blurred && !showBlurredContent && <BlurOverlay onClick={toggleBlurVisibility} />}

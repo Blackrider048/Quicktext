@@ -18,8 +18,8 @@
   },
   "demo": {
     "banner-description": "Muudatused on ajutised ja neid võidakse lähtestada.",
-    "banner-title": "Memos demo",
-    "deploy-link": "Juurutage oma Memos"
+    "banner-title": "Quicktext demo",
+    "deploy-link": "Juurutage oma Quicktext"
   },
   "attachment-library": {
     "actions": {
@@ -107,7 +107,7 @@
     "map": "Kaart",
     "mark": "Mark",
     "memo": "Memo",
-    "memos": "Memos",
+    "Quicktext": "Quicktext",
     "more": "Rohkem",
     "name": "Nimi",
     "new": "Uus",
@@ -231,8 +231,8 @@
     },
     "copy-content": "Kopeeri sisu",
     "copy-link": "Kopeeri link",
-    "count-memos-in-date": "{{count}} {{memos}} mudelis {{date}}",
-    "count-memos-updated-in-date": "{{count}} {{memos}} on värskendatud {{date}}-l",
+    "count-Quicktext-in-date": "{{count}} {{Quicktext}} mudelis {{date}}",
+    "count-Quicktext-updated-in-date": "{{count}} {{Quicktext}} on värskendatud {{date}}-l",
     "delete-confirm": "Kas olete kindel, et soovite selle memo kustutada?",
     "delete-confirm-description": "See toiming on pöördumatu. Samuti eemaldatakse manused, lingid ja viited.",
     "direction": "Suund",
@@ -250,14 +250,14 @@
     "link-preview": "Lingi eelvaade",
     "links": "Lingid",
     "load-more": "Laadige rohkem",
-    "no-archived-memos": "Arhiveeritud memosid pole.",
-    "no-memos": "Memosid pole.",
+    "no-archived-Quicktext": "Arhiveeritud Quicktextid pole.",
+    "no-Quicktext": "Quicktextid pole.",
     "newest-first": "Kõige uuemad enne",
     "oldest-first": "Vanim enne",
     "order": "Telli",
     "order-by": "Telli järgi",
     "outline": "Kontuur",
-    "search-placeholder": "Otsi memosid...",
+    "search-placeholder": "Otsi Quicktextid...",
     "shown-time": "Näidatud aeg",
     "share": {
       "active-links": "Aktiivsed jagamislingid",
@@ -275,7 +275,7 @@
       "image-download": "Laadige alla PNG",
       "image-download-failed": "Kujutise eksportimine ebaõnnestus",
       "image-downloaded": "Pilt salvestatud",
-      "image-footer": "Jagatud Memos-st",
+      "image-footer": "Jagatud Quicktext-st",
       "image-share": "Jaga pilti",
       "image-share-failed": "Pildi jagamine ebaõnnestus",
       "image-title": "Jaga pildina",
@@ -334,7 +334,7 @@
   "reference": {
     "add-references": "Lisa viited",
     "embedded-usage": "Kasutage manustatud sisuna",
-    "no-memos-found": "Memosid ei leitud",
+    "no-Quicktext-found": "Quicktextid ei leitud",
     "search-placeholder": "Otsige sisu"
   },
   "resource": {
@@ -408,10 +408,10 @@
       "delete-account": "Kustuta konto",
       "delete-account-description": "Eemaldage jäädavalt see konto ja kogu sellega seotud juurdepääs sellelt eksemplarilt. Seda toimingut ei saa tagasi võtta.",
       "email-note": "Valikuline",
-      "export-memos": "Ekspordi Memos",
+      "export-Quicktext": "Ekspordi Quicktext",
       "nickname-note": "Kuvatakse bänneris",
       "openapi-reset": "Lähtestage OpenAPI võti",
-      "openapi-sample-post": "Tere #memos {{url}}-lt",
+      "openapi-sample-post": "Tere #Quicktext {{url}}-lt",
       "openapi-title": "OpenAPI",
       "reset-api": "Lähtestage API",
       "title": "Konto teave",
@@ -422,10 +422,10 @@
       "add-provider": "Lisa teenusepakkuja",
       "api-key": "API võti",
       "api-key-required": "API võti on vajalik.",
-      "byok-description": "Ühendage OpenAI või Gemini oma konto võtmega API. Memos helistab teenusepakkujale otse sellest serverist.",
-      "byok-key-note": "Kasutage oma teenusepakkuja konto võtit; Memos ei koonda jagatud AI mandaate.",
+      "byok-description": "Ühendage OpenAI või Gemini oma konto võtmega API. Quicktext helistab teenusepakkujale otse sellest serverist.",
+      "byok-key-note": "Kasutage oma teenusepakkuja konto võtit; Quicktext ei koonda jagatud AI mandaate.",
       "byok-label": "BYOK",
-      "byok-model-note": "Memos valib toetatud mudelid selliste funktsioonide jaoks nagu heli transkriptsioon.",
+      "byok-model-note": "Quicktext valib toetatud mudelid selliste funktsioonide jaoks nagu heli transkriptsioon.",
       "byok-storage-note": "Klahvid jäävad sellele eksemplarile ja seadete laadimisel maskeeritakse.",
       "byok-title": "Kasutage oma AI kontot",
       "configured": "Seadistatud",
@@ -433,7 +433,7 @@
       "default-endpoint": "Vaikimisi lõpp-punkt",
       "delete-provider": "Kas kustutada AI pakkuja `{{title}}`?",
       "description": "Pakkuja võtmed tarnib eksemplari omanik ja neid kasutavad serveripoolsed AI funktsioonid.",
-      "dialog-description": "Lisage võti oma teenusepakkuja kontolt. Memos kasutab iga pakkuja jaoks sisseehitatud mudeleid; salvestatud võtme säilitamiseks jätke redigeerimise ajal võti API tühjaks.",
+      "dialog-description": "Lisage võti oma teenusepakkuja kontolt. Quicktext kasutab iga pakkuja jaoks sisseehitatud mudeleid; salvestatud võtme säilitamiseks jätke redigeerimise ajal võti API tühjaks.",
       "edit-provider": "Muuda pakkujat",
       "endpoint": "Lõpp-punkt",
       "endpoint-hint": "Ametliku pakkuja lõpp-punkti kasutamiseks jätke tühjaks.",
@@ -806,7 +806,7 @@
     "rename-error-repeat": "Uus nimi ei saa olla sama mis vana nimi",
     "rename-success": "Märgendi ümbernimetamine õnnestus",
     "rename-tag": "Nimetage silt ümber",
-    "rename-tip": "Kõik teie selle sildiga memosid värskendatakse."
+    "rename-tip": "Kõik teie selle sildiga Quicktextid värskendatakse."
   },
   "tooltip": {
     "link-memo": "Link Memo",

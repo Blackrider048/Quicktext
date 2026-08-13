@@ -69,7 +69,7 @@
     "map": "Karta",
     "mark": "Označi",
     "memo": "Memo",
-    "memos": "Memos",
+    "Quicktext": "Quicktext",
     "more": "Više",
     "name": "Ime",
     "new": "Novi",
@@ -194,7 +194,7 @@
     },
     "copy-content": "Kopiraj sadržaj",
     "copy-link": "Kopiraj link",
-    "count-memos-in-date": "{{count}} {{memos}} na {{date}}",
+    "count-Quicktext-in-date": "{{count}} {{Quicktext}} na {{date}}",
     "delete-confirm": "Jesi li siguran da želiš obrisati ovaj memo? OVA AKCIJA JE NEPOVRATNA",
     "delete-confirm-description": "Ova akcija je nepovratna. Privici, linkovi i reference će također biti uklonjeni.",
     "direction": "Smjer",
@@ -212,8 +212,8 @@
     "link-preview": "Pregled poveznice",
     "links": "Linkovi",
     "load-more": "Učitaj više",
-    "no-archived-memos": "Nema arhiviranih memoa.",
-    "no-memos": "Nema memoa.",
+    "no-archived-Quicktext": "Nema arhiviranih memoa.",
+    "no-Quicktext": "Nema memoa.",
     "order-by": "Sortiraj po",
     "outline": "Obris",
     "search-placeholder": "Pretraži memoe...",
@@ -245,7 +245,7 @@
       "image-download": "Preuzmite PNG",
       "image-download-failed": "Izvoz slike nije uspio",
       "image-downloaded": "Slika je spremljena",
-      "image-footer": "Podijeljeno s Memos",
+      "image-footer": "Podijeljeno s Quicktext",
       "image-share": "Dijeli sliku",
       "image-share-failed": "Dijeljenje slike nije uspjelo",
       "image-title": "Dijeli kao sliku",
@@ -261,7 +261,7 @@
       "protected": "Za članove",
       "public": "Javno"
     },
-    "count-memos-updated-in-date": "{{count}} {{memos}} ažurirano na {{date}}",
+    "count-Quicktext-updated-in-date": "{{count}} {{Quicktext}} ažurirano na {{date}}",
     "newest-first": "Prvo najnoviji",
     "oldest-first": "Prvo najstariji",
     "order": "Redoslijed",
@@ -297,7 +297,7 @@
   "reference": {
     "add-references": "Dodaj reference",
     "embedded-usage": "Koristi kao ugrađeni sadržaj",
-    "no-memos-found": "Nema pronađenih memoa",
+    "no-Quicktext-found": "Nema pronađenih memoa",
     "search-placeholder": "Pretraži sadržaj"
   },
   "resource": {
@@ -367,10 +367,10 @@
     "account": {
       "change-password": "Promijeni lozinku",
       "email-note": "Neobavezno",
-      "export-memos": "Izvezi memoe",
+      "export-Quicktext": "Izvezi memoe",
       "nickname-note": "Prikazano u banneru",
       "openapi-reset": "Resetiraj OpenAPI ključ",
-      "openapi-sample-post": "Pozdrav #memos od {{url}}",
+      "openapi-sample-post": "Pozdrav #Quicktext od {{url}}",
       "openapi-title": "OpenAPI",
       "reset-api": "Resetiraj API",
       "title": "Informacije o računu",
@@ -660,10 +660,10 @@
       "add-provider": "Dodajte davatelja usluga",
       "api-key": "Ključ API",
       "api-key-required": "Potreban je ključ API.",
-      "byok-description": "Povežite OpenAI ili Gemini s API ključem s vlastitog računa. Memos poziva pružatelja usluga izravno s ovog poslužitelja.",
-      "byok-key-note": "Upotrijebite ključ s računa svog pružatelja usluga; Memos ne spaja dijeljene AI vjerodajnice.",
+      "byok-description": "Povežite OpenAI ili Gemini s API ključem s vlastitog računa. Quicktext poziva pružatelja usluga izravno s ovog poslužitelja.",
+      "byok-key-note": "Upotrijebite ključ s računa svog pružatelja usluga; Quicktext ne spaja dijeljene AI vjerodajnice.",
       "byok-label": "BYOK",
-      "byok-model-note": "Memos odabire podržane modele za značajke poput audio transkripcije.",
+      "byok-model-note": "Quicktext odabire podržane modele za značajke poput audio transkripcije.",
       "byok-storage-note": "Ključevi ostaju na ovoj instanci i maskirani su kada se učitaju postavke.",
       "byok-title": "Koristite vlastiti AI račun",
       "configured": "Konfigurirano",
@@ -671,7 +671,7 @@
       "default-endpoint": "Zadana krajnja točka",
       "delete-provider": "Izbrisati AI pružatelja usluga `{{title}}`?",
       "description": "Ključeve dobavljača daje vlasnik instance i koriste ih značajke AI na strani poslužitelja.",
-      "dialog-description": "Dodajte ključ s vlastitog računa pružatelja usluga. Memos koristi ugrađene modele za svakog pružatelja; ostavite ključ API prazan tijekom uređivanja kako biste zadržali pohranjeni ključ.",
+      "dialog-description": "Dodajte ključ s vlastitog računa pružatelja usluga. Quicktext koristi ugrađene modele za svakog pružatelja; ostavite ključ API prazan tijekom uređivanja kako biste zadržali pohranjeni ključ.",
       "edit-provider": "Uredi davatelja usluga",
       "endpoint": "Krajnja točka",
       "endpoint-hint": "Ostavite prazno za korištenje službene krajnje točke pružatelja usluga.",
@@ -781,8 +781,8 @@
   },
   "demo": {
     "banner-description": "Promjene su privremene i mogu se poništiti.",
-    "banner-title": "Demo Memos",
-    "deploy-link": "Postavite svoj Memos"
+    "banner-title": "Demo Quicktext",
+    "deploy-link": "Postavite svoj Quicktext"
   },
   "attachment-library": {
     "actions": {

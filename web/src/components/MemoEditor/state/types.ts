@@ -25,6 +25,7 @@ export interface EditorState {
   timestamps: {
     createTime?: Date;
     updateTime?: Date;
+    alarmTime?: Date;
   };
   localFiles: LocalFile[];
   /** Whether an audio recording is in flight; gates save. The recorder's full
@@ -67,6 +68,7 @@ const defaultState: EditorState = {
   timestamps: {
     createTime: undefined,
     updateTime: undefined,
+    alarmTime: undefined,
   },
   localFiles: [],
   recorderBusy: false,

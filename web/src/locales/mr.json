@@ -68,7 +68,7 @@
     "map": "नकाशा",
     "mark": "खूण",
     "memo": "मेमो",
-    "memos": "मेमो",
+    "Quicktext": "मेमो",
     "more": "अधिक",
     "name": "नाव",
     "new": "नविन",
@@ -180,7 +180,7 @@
     },
     "copy-content": "सामग्रीची प्रत बनवा",
     "copy-link": "लिंकची प्रत बनवा",
-    "count-memos-in-date": "{{count}} {{memos}} {{date}} ला",
+    "count-Quicktext-in-date": "{{count}} {{Quicktext}} {{date}} ला",
     "delete-confirm": "हा मेमो हटवण्याची तुम्हाला खात्री आहे का? हि क्रिया अपरिवर्तनीय आहे",
     "delete-confirm-description": "ही क्रिया अपरिवर्तनीय आहे. संलग्नक, लिंक आणि संदर्भ देखील काढून टाकले जातील.",
     "direction": "दिशा",
@@ -198,8 +198,8 @@
     "link-preview": "दुवा पूर्वावलोकन",
     "links": "लिंक्स",
     "load-more": "अधिक लोड करा",
-    "no-archived-memos": "कोणतेही संग्रहित मेमो नाहीत.",
-    "no-memos": "कोणतेही मेमो नाहीत.",
+    "no-archived-Quicktext": "कोणतेही संग्रहित मेमो नाहीत.",
+    "no-Quicktext": "कोणतेही मेमो नाहीत.",
     "order-by": "क्रमवारी",
     "search-placeholder": "मेमोज शोधा...",
     "show-less": "कमी दाखवा",
@@ -263,7 +263,7 @@
   "reference": {
     "add-references": "संदर्भ जोडा",
     "embedded-usage": "एम्बेडेड सामग्री म्हणून वापरा",
-    "no-memos-found": "कोणतेही मेमो आढळले नाहीत",
+    "no-Quicktext-found": "कोणतेही मेमो आढळले नाहीत",
     "search-placeholder": "सामग्री शोधा"
   },
   "resource": {
@@ -451,7 +451,7 @@
     "account": {
       "change-password": "पासवर्ड बदला",
       "email-note": "ऐच्छिक",
-      "export-memos": "मेमो निर्यात करा",
+      "export-Quicktext": "मेमो निर्यात करा",
       "nickname-note": "बॅनर मध्ये प्रदर्शित",
       "openapi-reset": "OpenAPI की रीसेट करा",
       "openapi-sample-post": "{{url}} कडून नमस्कार #मेमो",

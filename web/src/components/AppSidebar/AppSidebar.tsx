@@ -3,6 +3,7 @@ import {
   ArchiveIcon,
   ArrowRightIcon,
   BellIcon,
+  CheckSquareIcon,
   ChevronDownIcon,
   EarthIcon,
   FileAudioIcon,
@@ -11,6 +12,7 @@ import {
   ImageIcon,
   InfoIcon,
   LayoutListIcon,
+  LinkIcon,
   ListIcon,
   type LucideIcon,
   MapIcon,
@@ -206,7 +208,7 @@ const ProfileMode = () => {
 
   return (
     <SidebarSection label={t("common.profile")}>
-      <SidebarRow active={active === "memos"} icon={LayoutListIcon} label={t("common.memos")} onClick={() => setMode("memos")} />
+      <SidebarRow active={active === "memos"} icon={LayoutListIcon} label={t("common.Quicktext")} onClick={() => setMode("memos")} />
       <SidebarRow active={active === "map"} icon={MapIcon} label={t("common.map")} onClick={() => setMode("map")} />
     </SidebarSection>
   );
@@ -231,8 +233,6 @@ const CollectionSidebarContent = ({ context }: { context: MemoStatsContext }) =>
     enabled: authInitialized && instanceInitialized && (md || mobileOpen),
   });
 
-  const showViews = !!currentUser && (context === "home" || context === "archived" || context === "explore");
-
   // Off the collection routes (the library shown as fallback content), calendar and tag
   // clicks must land somewhere that renders the filtered feed.
   const onCollectionRoute = isMemoScopeRoute(location.pathname) || !!profileMatch;
@@ -244,9 +244,42 @@ const CollectionSidebarContent = ({ context }: { context: MemoStatsContext }) =>
       <SidebarSection ariaLabel={t("common.statistics")}>
         <StatisticsView statisticsData={statistics} navigationTarget={filterTarget} onDateSelect={() => setMobileOpen(false)} />
       </SidebarSection>
-      {showViews && <ViewsSection />}
+      <CategoriesSection />
       <TagsSection tagCount={tags} navigationTarget={filterTarget} scope={statsUserName ?? context} onSelect={() => setMobileOpen(false)} />
     </div>
+  );
+};
+
+const CategoriesSection = () => {
+  const { filters, setFilters } = useMemoFilterContext();
+  const { setMobileOpen } = useAppSidebar();
+
+  const handleCategoryClick = (factor: "property.hasLink" | "has_image" | "property.hasTaskList") => {
+    // Check if the filter already exists
+    const filterExists = filters.some((f) => f.factor === factor);
+    if (filterExists) {
+      setFilters(filters.filter((f) => f.factor !== factor));
+    } else {
+      setFilters([...filters.filter((f) => f.factor !== factor), { factor, value: "" }]);
+    }
+    setMobileOpen(false);
+  };
+
+  const hasLinkFilter = filters.some((f) => f.factor === "property.hasLink");
+  const hasImageFilter = filters.some((f) => f.factor === "has_image");
+  const hasTaskListFilter = filters.some((f) => f.factor === "property.hasTaskList");
+
+  return (
+    <SidebarSection label="Categories">
+      <SidebarRow active={hasLinkFilter} icon={LinkIcon} label="URLs" onClick={() => handleCategoryClick("property.hasLink")} />
+      <SidebarRow active={hasImageFilter} icon={ImageIcon} label="Images" onClick={() => handleCategoryClick("has_image")} />
+      <SidebarRow
+        active={hasTaskListFilter}
+        icon={CheckSquareIcon}
+        label="Tasks"
+        onClick={() => handleCategoryClick("property.hasTaskList")}
+      />
+    </SidebarSection>
   );
 };
 
@@ -581,7 +614,13 @@ const AppSidebar = ({ className }: { className?: string }) => {
   const currentUser = useCurrentUser();
   const { setMobileOpen, setQuickFindOpen } = useAppSidebar();
   return (
-    <aside className={cn("flex h-full w-full select-none flex-col bg-sidebar text-sidebar-foreground", className)}>
+    <aside
+      className={cn(
+        "flex h-full w-full select-none flex-col text-sidebar-foreground",
+        !className?.includes("bg-") && "bg-sidebar",
+        className,
+      )}
+    >
       <div className={cn("flex h-13 shrink-0 items-center justify-between gap-2", SIDEBAR_HORIZONTAL_PADDING)}>
         <Link
           to={currentUser ? ROUTES.HOME : ROUTES.EXPLORE}
@@ -618,7 +657,7 @@ const AppSidebar = ({ className }: { className?: string }) => {
           >
             <span className="flex min-w-0 flex-1 items-center gap-2">
               <UserRoundIcon className="size-5 shrink-0 text-muted-foreground" strokeWidth={1.8} />
-              <span className="truncate">{t("common.sign-in-to-memos")}</span>
+              <span className="truncate">{t("common.sign-in-to-Quicktext")}</span>
             </span>
             <ArrowRightIcon
               className="size-3.5 shrink-0 text-muted-foreground/60 transition-transform group-hover:translate-x-0.5"
@@ -635,7 +674,7 @@ export const MobileAppHeader = () => {
   const currentUser = useCurrentUser();
   const { setMobileOpen } = useAppSidebar();
   return (
-    <header className="sticky top-0 z-20 flex h-12 w-full items-center justify-start gap-1 border-b border-border/70 bg-background/90 px-2 backdrop-blur-md md:hidden">
+    <header className="sticky top-0 z-20 flex h-12 w-full items-center justify-start gap-1 border-b border-border/70 bg-background/60 px-2 backdrop-blur-xl md:hidden">
       <Button variant="ghost" size="icon-sm" className="size-8" onClick={() => setMobileOpen(true)} aria-label="Open navigation">
         <MenuIcon className="size-[18px]" />
       </Button>

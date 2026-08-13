@@ -171,6 +171,12 @@ func convertUserSettingFromStore(storeSetting *storepb.UserSetting, user *store.
 			setting.Value = &v1pb.UserSetting_TagsSetting_{
 				TagsSetting: &v1pb.UserSetting_TagsSetting{Tags: map[string]*v1pb.UserSetting_TagMetadata{}},
 			}
+		case storepb.UserSetting_SEARCH_HISTORY:
+			setting.Value = &v1pb.UserSetting_SearchHistorySetting_{
+				SearchHistorySetting: &v1pb.UserSetting_SearchHistorySetting{
+					SearchHistory: []string{},
+				},
+			}
 		default:
 			return nil
 		}
@@ -221,6 +227,12 @@ func convertUserSettingFromStore(storeSetting *storepb.UserSetting, user *store.
 	case storepb.UserSetting_TAGS:
 		setting.Value = &v1pb.UserSetting_TagsSetting_{
 			TagsSetting: convertUserTagsSettingFromStore(storeSetting.GetTags()),
+		}
+	case storepb.UserSetting_SEARCH_HISTORY:
+		setting.Value = &v1pb.UserSetting_SearchHistorySetting_{
+			SearchHistorySetting: &v1pb.UserSetting_SearchHistorySetting{
+				SearchHistory: storeSetting.GetSearchHistory().GetSearchHistory(),
+			},
 		}
 	default:
 		return nil
@@ -276,6 +288,16 @@ func convertUserSettingToStore(apiSetting *v1pb.UserSetting, userID int32, key s
 			}
 		} else {
 			return nil, errors.Errorf("tags setting is required")
+		}
+	case storepb.UserSetting_SEARCH_HISTORY:
+		if searchHistory := apiSetting.GetSearchHistorySetting(); searchHistory != nil {
+			storeSetting.Value = &storepb.UserSetting_SearchHistory{
+				SearchHistory: &storepb.SearchHistoryUserSetting{
+					SearchHistory: searchHistory.GetSearchHistory(),
+				},
+			}
+		} else {
+			return nil, errors.Errorf("search history setting is required")
 		}
 	default:
 		return nil, errors.Errorf("unsupported setting key: %v", key)

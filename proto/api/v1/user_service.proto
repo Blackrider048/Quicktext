@@ -433,6 +433,7 @@ message UserSetting {
     GeneralSetting general_setting = 2;
     WebhooksSetting webhooks_setting = 5;
     TagsSetting tags_setting = 6;
+    SearchHistorySetting search_history_setting = 7;
   }
 
   // Enumeration of user setting keys.
@@ -444,6 +445,8 @@ message UserSetting {
     WEBHOOKS = 4;
     // TAGS is the key for per-user tag metadata.
     TAGS = 5;
+    // SEARCH_HISTORY is the key for user search history.
+    SEARCH_HISTORY = 6;
   }
 
   // General user settings configuration.
@@ -480,6 +483,12 @@ message UserSetting {
   message WebhooksSetting {
     // List of user webhooks.
     repeated UserWebhook webhooks = 1;
+  }
+
+  // User search history configuration.
+  message SearchHistorySetting {
+    // List of user search history.
+    repeated string search_history = 1;
   }
 }
 

@@ -68,7 +68,7 @@
     "map": "خريطة",
     "mark": "تعليم",
     "memo": "مذكرة",
-    "memos": "مذكرات",
+    "Quicktext": "مذكرات",
     "more": "المزيد",
     "name": "الاسم",
     "new": "جديد",
@@ -180,7 +180,7 @@
     },
     "copy-content": "نسخ المحتوى",
     "copy-link": "نسخ الرابط",
-    "count-memos-in-date": "{{count}} {{memos}} في {{date}}",
+    "count-Quicktext-in-date": "{{count}} {{Quicktext}} في {{date}}",
     "delete-confirm": "هل أنت متأكد أنك تريد حذف هذه المذكرة؟\n\nهذا الإجراء لا رجعة فيه",
     "delete-confirm-description": "هذا الإجراء لا رجعة فيه. ستتم إزالة المرفقات والروابط والمراجع أيضًا.",
     "direction": "الاتجاه",
@@ -198,8 +198,8 @@
     "link-preview": "معاينة الرابط",
     "links": "روابط",
     "load-more": "تحميل المزيد",
-    "no-archived-memos": "لا يوجد مذكرات مؤرشفة",
-    "no-memos": "لا يوجد مذكرات.",
+    "no-archived-Quicktext": "لا يوجد مذكرات مؤرشفة",
+    "no-Quicktext": "لا يوجد مذكرات.",
     "order-by": "ترتيب حسب",
     "search-placeholder": "ابحث عن مذكرة...",
     "show-less": "عرض أقل",
@@ -263,7 +263,7 @@
   "reference": {
     "add-references": "إضافة مراجع",
     "embedded-usage": "الاستخدام كمحتوى مضمّن",
-    "no-memos-found": "لم يتم العثور على مذكرات",
+    "no-Quicktext-found": "لم يتم العثور على مذكرات",
     "search-placeholder": "ابحث في المحتوى"
   },
   "resource": {
@@ -451,7 +451,7 @@
     "account": {
       "change-password": "تغيير كلمة المرور",
       "email-note": "اختياري",
-      "export-memos": "تصدير المذكرات",
+      "export-Quicktext": "تصدير المذكرات",
       "nickname-note": "معروض في اللافتة",
       "openapi-reset": "إعادة ضبط مفتاح OpenAPI",
       "openapi-sample-post": "مرحبًا #مذكراتي من {{url}}",

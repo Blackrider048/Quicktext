@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import { useEffect, useRef } from "react";
+import toast from "react-hot-toast";
 import { Navigate, Outlet, useLocation, useSearchParams } from "react-router-dom";
 import AppSidebar, {
   MobileAppHeader,
@@ -14,6 +15,7 @@ import { useInstance } from "@/contexts/InstanceContext";
 import { MemoFilterProvider, useMemoFilterContext } from "@/contexts/MemoFilterContext";
 import useCurrentUser from "@/hooks/useCurrentUser";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import { useReminders } from "@/hooks/useReminders";
 import { buildAuthRoute, shouldGatePrivateInstance } from "@/utils/auth-redirect";
 import { useTranslate } from "@/utils/i18n";
 
@@ -58,6 +60,18 @@ const RootLayoutContent = () => {
     prevPathnameRef.current = pathname;
   }, [pathname, searchParams, removeFilter]);
 
+  const { reminders, toggleReminder } = useReminders();
+  useEffect(() => {
+    if (!currentUser) return;
+    const now = Date.now();
+    Object.entries(reminders).forEach(([memoId, time]) => {
+      if (now >= time) {
+        toast.success(`Reminder for memo ${memoId.split("/")[1]}!`, { duration: 6000 });
+        toggleReminder(memoId);
+      }
+    });
+  }, [currentUser, reminders, toggleReminder]);
+
   // Private instance (no InstanceURL configured): anonymous visitors may only reach
   // share links; everything else redirects to the sign-in page, preserving the intended
   // destination. Public instances keep the open Explore behavior for logged-out users.
@@ -68,10 +82,10 @@ const RootLayoutContent = () => {
 
   return (
     <AppSidebarProvider>
-      <div ref={shellRef} className="min-h-full w-full bg-background" style={{ [SIDEBAR_WIDTH_VAR]: `${sidebarWidth}px` } as CSSProperties}>
+      <div ref={shellRef} className="min-h-full w-full" style={{ [SIDEBAR_WIDTH_VAR]: `${sidebarWidth}px` } as CSSProperties}>
         {md && (
-          <div className="fixed inset-y-0 left-0 z-30 w-(--app-sidebar-width) border-r border-border/70">
-            <AppSidebar />
+          <div className="fixed inset-y-3 left-3 z-30 w-(--app-sidebar-width) rounded-3xl border border-white/20 bg-sidebar/50 shadow-2xl backdrop-blur-2xl transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
+            <AppSidebar className="rounded-3xl bg-transparent" />
             <SidebarResizeHandle
               width={sidebarWidth}
               minWidth={minWidth}
@@ -82,7 +96,7 @@ const RootLayoutContent = () => {
           </div>
         )}
         <MobileAppSidebar />
-        <main className="flex min-h-full w-full min-w-0 flex-col items-center md:pl-(--app-sidebar-width)">
+        <main className="flex min-h-full w-full min-w-0 flex-col items-center md:pl-[calc(var(--app-sidebar-width)+1.5rem)] md:pr-4 md:py-3">
           <MobileAppHeader />
           {profile.demo && <DemoBanner />}
           <Outlet />

@@ -11,8 +11,8 @@ interface Props {
 function MemosLogo(props: Props) {
   const { collapsed, compact } = props;
   const { generalSetting: instanceGeneralSetting } = useInstance();
-  const title = instanceGeneralSetting.customProfile?.title || "Memos";
-  const avatarUrl = instanceGeneralSetting.customProfile?.logoUrl || "/full-logo.webp";
+  const title = instanceGeneralSetting.customProfile?.title || "Quicktext";
+  const avatarUrl = instanceGeneralSetting.customProfile?.logoUrl || "/full-logo.png";
 
   return (
     <div className={cn("relative w-full h-auto shrink-0", props.className)}>

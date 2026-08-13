@@ -69,7 +69,7 @@
     "map": "Mapa",
     "mark": "Oznacz",
     "memo": "Notatka",
-    "memos": "Notatki",
+    "Quicktext": "Notatki",
     "more": "Więcej",
     "name": "Nazwa",
     "new": "Nowy",
@@ -212,7 +212,7 @@
     },
     "copy-content": "Kopiuj treść",
     "copy-link": "Kopiuj link",
-    "count-memos-in-date": "{{count}} {{memos}} w dniu {{date}}",
+    "count-Quicktext-in-date": "{{count}} {{Quicktext}} w dniu {{date}}",
     "delete-confirm": "Czy na pewno chcesz usunąć tę notatkę?",
     "delete-confirm-description": "Czy na pewno chcesz usunąć tę notatkę? Załączniki, linki i odnośniki także będą usunięte. TA AKCJA JEST NIEODWRACALNA",
     "direction": "Kierunek",
@@ -230,8 +230,8 @@
     "link-preview": "Podgląd linków",
     "links": "Linki",
     "load-more": "Załaduj więcej",
-    "no-archived-memos": "Brak zarchiwizowanych notatek.",
-    "no-memos": "Brak notatek.",
+    "no-archived-Quicktext": "Brak zarchiwizowanych notatek.",
+    "no-Quicktext": "Brak notatek.",
     "new-badge": "Nowe",
     "order-by": "Sortuj według",
     "outline": "Zarys",
@@ -264,7 +264,7 @@
       "image-download": "Pobierz PNG",
       "image-download-failed": "Nie udało się wyeksportować obrazu",
       "image-downloaded": "Obraz został zapisany",
-      "image-footer": "Udostępnione z Memos",
+      "image-footer": "Udostępnione z Quicktext",
       "image-share": "Udostępnij obraz",
       "image-share-failed": "Nie udało się udostępnić obrazu",
       "image-title": "Udostępnij jako obraz",
@@ -280,7 +280,7 @@
       "protected": "Przestrzeń robocza",
       "public": "Publiczne"
     },
-    "count-memos-updated-in-date": "{{count}} {{memos}} zaktualizowano na {{date}}",
+    "count-Quicktext-updated-in-date": "{{count}} {{Quicktext}} zaktualizowano na {{date}}",
     "newest-first": "Najpierw najnowsze",
     "oldest-first": "Najpierw najstarszy",
     "order": "Zamówienie",
@@ -316,7 +316,7 @@
   "reference": {
     "add-references": "Dodaj odniesienia",
     "embedded-usage": "Użyj jako treść osadzoną",
-    "no-memos-found": "Nie znaleziono notatek",
+    "no-Quicktext-found": "Nie znaleziono notatek",
     "search-placeholder": "Szukaj treści"
   },
   "resource": {
@@ -386,10 +386,10 @@
     "account": {
       "change-password": "Zmień hasło",
       "email-note": "Opcjonalne",
-      "export-memos": "Eksportuj notatki",
+      "export-Quicktext": "Eksportuj notatki",
       "nickname-note": "Wyświetlane w banerze",
       "openapi-reset": "Resetuj klucz OpenAPI",
-      "openapi-sample-post": "Witaj #memos z {{url}}",
+      "openapi-sample-post": "Witaj #Quicktext z {{url}}",
       "openapi-title": "OpenAPI",
       "reset-api": "Resetuj API",
       "title": "Informacje o koncie",
@@ -692,10 +692,10 @@
       "add-provider": "Dodaj dostawcę",
       "api-key": "Klucz API",
       "api-key-required": "Wymagany jest klucz API.",
-      "byok-description": "Połącz OpenAI lub Gemini z kluczem API z własnego konta. Memos wywołuje dostawcę bezpośrednio z tego serwera.",
-      "byok-key-note": "Użyj klucza z konta dostawcy; Memos nie zawiera współdzielonych poświadczeń AI.",
+      "byok-description": "Połącz OpenAI lub Gemini z kluczem API z własnego konta. Quicktext wywołuje dostawcę bezpośrednio z tego serwera.",
+      "byok-key-note": "Użyj klucza z konta dostawcy; Quicktext nie zawiera współdzielonych poświadczeń AI.",
       "byok-label": "BYOK",
-      "byok-model-note": "Memos wybiera obsługiwane modele dla funkcji takich jak transkrypcja audio.",
+      "byok-model-note": "Quicktext wybiera obsługiwane modele dla funkcji takich jak transkrypcja audio.",
       "byok-storage-note": "Klucze pozostają w tej instancji i są maskowane po załadowaniu ustawień.",
       "byok-title": "Użyj własnego konta AI",
       "configured": "Skonfigurowane",
@@ -703,7 +703,7 @@
       "default-endpoint": "Domyślny endpoint",
       "delete-provider": "Usunąć dostawcę AI `{{title}}`?",
       "description": "Klucze dostawcy są dostarczane przez właściciela instancji i używane przez funkcje AI po stronie serwera.",
-      "dialog-description": "Dodaj klucz z własnego konta dostawcy. Memos wykorzystuje wbudowane modele dla każdego dostawcy; pozostaw klucz API pusty podczas edycji, aby zachować zapisany klucz.",
+      "dialog-description": "Dodaj klucz z własnego konta dostawcy. Quicktext wykorzystuje wbudowane modele dla każdego dostawcy; pozostaw klucz API pusty podczas edycji, aby zachować zapisany klucz.",
       "edit-provider": "Edytuj dostawcę",
       "endpoint": "Endpoint",
       "endpoint-hint": "Pozostaw puste, aby użyć oficjalnego endpointu dostawcy.",
@@ -813,8 +813,8 @@
   },
   "demo": {
     "banner-description": "Zmiany mają charakter tymczasowy i mogą zostać zresetowane.",
-    "banner-title": "Demo Memos",
-    "deploy-link": "Wdróż swój Memos"
+    "banner-title": "Demo Quicktext",
+    "deploy-link": "Wdróż swój Quicktext"
   },
   "attachment-library": {
     "actions": {

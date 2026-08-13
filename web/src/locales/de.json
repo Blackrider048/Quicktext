@@ -69,7 +69,7 @@
     "map": "Karte",
     "mark": "Markieren",
     "memo": "Notiz",
-    "memos": "Notizen",
+    "Quicktext": "Notizen",
     "more": "Mehr",
     "name": "Name",
     "new": "Neu",
@@ -194,7 +194,7 @@
     },
     "copy-content": "Inhalt kopieren",
     "copy-link": "Link kopieren",
-    "count-memos-in-date": "{{count}} {{memos}} in {{date}}",
+    "count-Quicktext-in-date": "{{count}} {{Quicktext}} in {{date}}",
     "delete-confirm": "Bist du sicher, dass du diese Notiz löschen möchtest?\n\nDIESE AKTION KANN NICHT RÜCKGÄNGIG GEMACHT WERDEN",
     "delete-confirm-description": "Dieser Vorgang ist nicht rückgängig zu machen. Anhänge, Links und Verknüpfungen werden ebenfalls gelöscht.",
     "direction": "Richtung",
@@ -212,8 +212,8 @@
     "link-preview": "Linkvorschau",
     "links": "Links",
     "load-more": "Mehr laden",
-    "no-archived-memos": "Keine archivierten Notizen.",
-    "no-memos": "Keine Notizen.",
+    "no-archived-Quicktext": "Keine archivierten Notizen.",
+    "no-Quicktext": "Keine Notizen.",
     "order-by": "Sortieren nach",
     "outline": "Gliederung",
     "search-placeholder": "Notizen durchsuchen...",
@@ -245,7 +245,7 @@
       "image-download": "Laden Sie PNG herunter",
       "image-download-failed": "Bild konnte nicht exportiert werden",
       "image-downloaded": "Bild gespeichert",
-      "image-footer": "Geteilt von Memos",
+      "image-footer": "Geteilt von Quicktext",
       "image-share": "Bild teilen",
       "image-share-failed": "Bild konnte nicht geteilt werden",
       "image-title": "Als Bild teilen",
@@ -261,7 +261,7 @@
       "protected": "Geschützt",
       "public": "Öffentlich"
     },
-    "count-memos-updated-in-date": "{{count}} {{memos}} aktualisiert auf {{date}}",
+    "count-Quicktext-updated-in-date": "{{count}} {{Quicktext}} aktualisiert auf {{date}}",
     "newest-first": "Das Neueste zuerst",
     "oldest-first": "Älteste zuerst",
     "order": "Befehl",
@@ -297,7 +297,7 @@
   "reference": {
     "add-references": "Referenzen hinzufügen",
     "embedded-usage": "Als eingebetteten Inhalt verwenden",
-    "no-memos-found": "Keine Notizen gefunden",
+    "no-Quicktext-found": "Keine Notizen gefunden",
     "search-placeholder": "Suche Notizen"
   },
   "resource": {
@@ -328,7 +328,7 @@
     "delete-selected-resources": "Ausgewählte Ressourcen löschen",
     "fetching-data": "Lade Daten…",
     "file-drag-drop-prompt": "Datei hierher ziehen und ablegen, um sie hochzuladen",
-    "linked-amount": "Anzahl verlinkter Memos",
+    "linked-amount": "Anzahl verlinkter Quicktext",
     "no-files-selected": "Keine Dateien ausgewählt",
     "no-resources": "Keine Ressourcen.",
     "no-unused-resources": "Keine ungenutzten Ressourcen",
@@ -367,10 +367,10 @@
     "account": {
       "change-password": "Passwort ändern",
       "email-note": "Optional",
-      "export-memos": "Notizen exportieren",
+      "export-Quicktext": "Notizen exportieren",
       "nickname-note": "Wird im Banner angezeigt",
       "openapi-reset": "OpenAPI Key zurücksetzen",
-      "openapi-sample-post": "Hallo #memos von {{url}}",
+      "openapi-sample-post": "Hallo #Quicktext von {{url}}",
       "openapi-title": "OpenAPI",
       "reset-api": "API zurücksetzen",
       "title": "Konto-Informationen",
@@ -433,10 +433,10 @@
       "configured-reactions": "Konfigurierte Reaktionen",
       "content-length-limit-description": "Maximale vom Server akzeptierte Größe des Memokörpers.",
       "double-click-edit-description": "Ermöglichen Sie Benutzern, die Memobearbeitung zu öffnen, indem sie auf ein Memo doppelklicken.",
-      "editing-description": "Steuern Sie das Bearbeitungsverhalten von Memos und serverseitige Inhaltsbeschränkungen.",
+      "editing-description": "Steuern Sie das Bearbeitungsverhalten von Quicktext und serverseitige Inhaltsbeschränkungen.",
       "editing-title": "Bearbeitung",
       "reaction-placeholder": "z.B. 👍",
-      "reactions-description": "Definieren Sie die Reaktionsoptionen, die Benutzer auf Memos anwenden können.",
+      "reactions-description": "Definieren Sie die Reaktionsoptionen, die Benutzer auf Quicktext anwenden können.",
       "remove-reaction": "Reaktion entfernen"
     },
     "my-account": {
@@ -449,9 +449,9 @@
       "theme": "Design",
       "appearance-description": "Wählen Sie aus, wie die App aussieht und welche Sprache sie für Ihr Konto verwendet.",
       "appearance-title": "Aussehen",
-      "default-memo-visibility-description": "Die Sichtbarkeit wird auf neu erstellte Memos angewendet, sofern sie nicht im Editor geändert wird.",
+      "default-memo-visibility-description": "Die Sichtbarkeit wird auf neu erstellte Quicktext angewendet, sofern sie nicht im Editor geändert wird.",
       "language-description": "Aktualisiert die Sprache der Benutzeroberfläche sofort und speichert sie in Ihrem Konto.",
-      "memo-defaults-description": "Legen Sie die Standardeinstellungen fest, die beim Verfassen neuer Memos verwendet werden.",
+      "memo-defaults-description": "Legen Sie die Standardeinstellungen fest, die beim Verfassen neuer Quicktext verwendet werden.",
       "memo-defaults-title": "Memo-Standardwerte",
       "theme-description": "Wendet das ausgewählte Thema sofort auf diesem Gerät an."
     },
@@ -654,16 +654,16 @@
       "configured-rules": "Konfigurierte Regeln",
       "default-color": "Standard",
       "matching-rule": "Verankerter regulärer Ausdruck",
-      "used-count": "{{count}}-Memos"
+      "used-count": "{{count}}-Quicktext"
     },
     "ai": {
       "add-provider": "Anbieter hinzufügen",
       "api-key": "API-Taste",
       "api-key-required": "Der API-Schlüssel ist erforderlich.",
-      "byok-description": "Verbinden Sie OpenAI oder Gemini mit einem API-Schlüssel von Ihrem eigenen Konto. Memos ruft den Anbieter direkt von diesem Server aus auf.",
-      "byok-key-note": "Verwenden Sie einen Schlüssel aus Ihrem Provider-Konto; Memos bündelt keine gemeinsam genutzten AI-Anmeldeinformationen.",
+      "byok-description": "Verbinden Sie OpenAI oder Gemini mit einem API-Schlüssel von Ihrem eigenen Konto. Quicktext ruft den Anbieter direkt von diesem Server aus auf.",
+      "byok-key-note": "Verwenden Sie einen Schlüssel aus Ihrem Provider-Konto; Quicktext bündelt keine gemeinsam genutzten AI-Anmeldeinformationen.",
       "byok-label": "BYOK",
-      "byok-model-note": "Memos wählt unterstützte Modelle für Funktionen wie Audiotranskription aus.",
+      "byok-model-note": "Quicktext wählt unterstützte Modelle für Funktionen wie Audiotranskription aus.",
       "byok-storage-note": "Schlüssel bleiben auf dieser Instanz und werden beim Laden der Einstellungen maskiert.",
       "byok-title": "Verwenden Sie Ihr eigenes AI-Konto",
       "configured": "Konfiguriert",
@@ -671,7 +671,7 @@
       "default-endpoint": "Standardendpunkt",
       "delete-provider": "AI-Anbieter löschen `{{title}}`?",
       "description": "Anbieterschlüssel werden vom Instanzbesitzer bereitgestellt und von serverseitigen AI-Funktionen verwendet.",
-      "dialog-description": "Fügen Sie einen Schlüssel von Ihrem eigenen Anbieterkonto hinzu. Memos verwendet integrierte Modelle für jeden Anbieter; Lassen Sie die Taste API während der Bearbeitung leer, um den gespeicherten Schlüssel beizubehalten.",
+      "dialog-description": "Fügen Sie einen Schlüssel von Ihrem eigenen Anbieterkonto hinzu. Quicktext verwendet integrierte Modelle für jeden Anbieter; Lassen Sie die Taste API während der Bearbeitung leer, um den gespeicherten Schlüssel beizubehalten.",
       "edit-provider": "Anbieter bearbeiten",
       "endpoint": "Endpunkt",
       "endpoint-hint": "Lassen Sie das Feld leer, um den offiziellen Anbieterendpunkt zu verwenden.",
@@ -781,8 +781,8 @@
   },
   "demo": {
     "banner-description": "Änderungen sind vorübergehend und können zurückgesetzt werden.",
-    "banner-title": "Memos-Demo",
-    "deploy-link": "Stellen Sie Ihr Memos bereit"
+    "banner-title": "Quicktext-Demo",
+    "deploy-link": "Stellen Sie Ihr Quicktext bereit"
   },
   "attachment-library": {
     "actions": {

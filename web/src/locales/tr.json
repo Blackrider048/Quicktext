@@ -69,7 +69,7 @@
     "map": "Harita",
     "mark": "İşaretle",
     "memo": "Not",
-    "memos": "Notlar",
+    "Quicktext": "Notlar",
     "more": "Daha fazla",
     "name": "İsim",
     "new": "Yeni",
@@ -194,7 +194,7 @@
     },
     "copy-content": "İçeriği kopyala",
     "copy-link": "Bağlantıyı Kopyala",
-    "count-memos-in-date": "{{date}} tarihinde {{count}} {{memos}}",
+    "count-Quicktext-in-date": "{{date}} tarihinde {{count}} {{Quicktext}}",
     "delete-confirm": "Bu notu silmek istediğinizden emin misiniz?",
     "delete-confirm-description": "Bu işlem geri alınamaz. Ekler, bağlantılar ve referanslar da kaldırılacaktır.",
     "direction": "Yön",
@@ -212,8 +212,8 @@
     "link-preview": "Bağlantı önizlemesi",
     "links": "Bağlantılar",
     "load-more": "Daha fazla yükle",
-    "no-archived-memos": "Arşivlenmiş not yok.",
-    "no-memos": "Not yok.",
+    "no-archived-Quicktext": "Arşivlenmiş not yok.",
+    "no-Quicktext": "Not yok.",
     "order-by": "Sıralama Ölçütü",
     "outline": "Ana hatlar",
     "search-placeholder": "Notlarda ara",
@@ -245,7 +245,7 @@
       "image-download": "PNG'i indirin",
       "image-download-failed": "Resim dışa aktarılamadı",
       "image-downloaded": "Resim kaydedildi",
-      "image-footer": "Memos'ten paylaşıldı",
+      "image-footer": "Quicktext'ten paylaşıldı",
       "image-share": "Resmi paylaş",
       "image-share-failed": "Resim paylaşılamadı",
       "image-title": "Resim olarak paylaş",
@@ -261,7 +261,7 @@
       "protected": "Korumalı",
       "public": "Herkese Açık"
     },
-    "count-memos-updated-in-date": "{{count}} {{memos}}, {{date}}'te güncellendi",
+    "count-Quicktext-updated-in-date": "{{count}} {{Quicktext}}, {{date}}'te güncellendi",
     "newest-first": "Önce en yeni",
     "oldest-first": "Önce en eski",
     "order": "Emir",
@@ -297,7 +297,7 @@
   "reference": {
     "add-references": "Referans ekle",
     "embedded-usage": "Gömülü İçerik Olarak Kullan",
-    "no-memos-found": "Not bulunamadı",
+    "no-Quicktext-found": "Not bulunamadı",
     "search-placeholder": "İçerik ara"
   },
   "resource": {
@@ -367,10 +367,10 @@
     "account": {
       "change-password": "Şifre değiştir",
       "email-note": "İsteğe bağlı",
-      "export-memos": "Notları Dışa Aktar",
+      "export-Quicktext": "Notları Dışa Aktar",
       "nickname-note": "Banner'da görüntülenir",
       "openapi-reset": "OpenAPI Anahtarını Sıfırla",
-      "openapi-sample-post": "Merhaba #memos, {{url}} adresinden",
+      "openapi-sample-post": "Merhaba #Quicktext, {{url}} adresinden",
       "openapi-title": "OpenAPI",
       "reset-api": "API'yi Sıfırla",
       "title": "Hesap Bilgileri",
@@ -660,10 +660,10 @@
       "add-provider": "Sağlayıcı ekle",
       "api-key": "API tuşu",
       "api-key-required": "API anahtarı gerekli.",
-      "byok-description": "OpenAI veya Gemini'i kendi hesabınızdaki bir API anahtarıyla bağlayın. Memos sağlayıcıyı doğrudan bu sunucudan arar.",
-      "byok-key-note": "Sağlayıcı hesabınızdan bir anahtar kullanın; Memos, paylaşılan AI kimlik bilgilerini birleştirmez.",
+      "byok-description": "OpenAI veya Gemini'i kendi hesabınızdaki bir API anahtarıyla bağlayın. Quicktext sağlayıcıyı doğrudan bu sunucudan arar.",
+      "byok-key-note": "Sağlayıcı hesabınızdan bir anahtar kullanın; Quicktext, paylaşılan AI kimlik bilgilerini birleştirmez.",
       "byok-label": "BYOK",
-      "byok-model-note": "Memos, ses transkripsiyonu gibi özellikler için desteklenen modelleri seçer.",
+      "byok-model-note": "Quicktext, ses transkripsiyonu gibi özellikler için desteklenen modelleri seçer.",
       "byok-storage-note": "Anahtarlar bu örnekte kalır ve ayarlar yüklendiğinde maskelenir.",
       "byok-title": "Kendi AI hesabınızı kullanın",
       "configured": "Yapılandırılmış",
@@ -671,7 +671,7 @@
       "default-endpoint": "Varsayılan uç nokta",
       "delete-provider": "AI sağlayıcısı `{{title}}` silinsin mi?",
       "description": "Sağlayıcı anahtarları, yönetim ortamı sahibi tarafından sağlanır ve sunucu tarafı AI özellikleri tarafından kullanılır.",
-      "dialog-description": "Kendi sağlayıcı hesabınızdan bir anahtar ekleyin. Memos her sağlayıcı için yerleşik modelleri kullanır; Saklanan anahtarı korumak için düzenleme sırasında API anahtarını boş bırakın.",
+      "dialog-description": "Kendi sağlayıcı hesabınızdan bir anahtar ekleyin. Quicktext her sağlayıcı için yerleşik modelleri kullanır; Saklanan anahtarı korumak için düzenleme sırasında API anahtarını boş bırakın.",
       "edit-provider": "Sağlayıcıyı düzenle",
       "endpoint": "Uç nokta",
       "endpoint-hint": "Resmi sağlayıcı uç noktasını kullanmak için boş bırakın.",
@@ -781,8 +781,8 @@
   },
   "demo": {
     "banner-description": "Değişiklikler geçicidir ve sıfırlanabilir.",
-    "banner-title": "Memos demosu",
-    "deploy-link": "Memos'inizi konuşlandırın"
+    "banner-title": "Quicktext demosu",
+    "deploy-link": "Quicktext'inizi konuşlandırın"
   },
   "attachment-library": {
     "actions": {

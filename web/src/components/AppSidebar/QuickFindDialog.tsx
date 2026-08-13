@@ -1,15 +1,18 @@
-import { CornerDownLeftIcon, SearchIcon } from "lucide-react";
+import { create } from "@bufbuild/protobuf";
+import { ClockIcon, CornerDownLeftIcon, SearchIcon } from "lucide-react";
 import { FormEvent, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { useAppSidebar } from "@/contexts/AppSidebarContext";
+import { useAuth } from "@/contexts/AuthContext";
 import { type MemoFilter, replaceFiltersByFactor, stringifyFilters, useMemoFilterContext } from "@/contexts/MemoFilterContext";
 import useCurrentUser from "@/hooks/useCurrentUser";
-import { useMemoViews } from "@/hooks/useUserQueries";
+import { useMemoViews, useUpdateUserSetting } from "@/hooks/useUserQueries";
 import { BUILTIN_TASKS_VIEW_ID, getMemoViewId, isMemoScopeRoute } from "@/lib/memo-views";
 import { ROUTES } from "@/router/routes";
+import { UserSetting_SearchHistorySettingSchema, UserSettingSchema } from "@/types/proto/api/v1/user_service_pb";
 import { useTranslate } from "@/utils/i18n";
 
 export const isQuickFindCollectionRoute = (pathname: string) => isMemoScopeRoute(pathname) || pathname.startsWith("/u/");
@@ -24,7 +27,7 @@ const getScopeLabel = (pathname: string, t: ReturnType<typeof useTranslate>) => 
   if (pathname === ROUTES.ARCHIVED) return t("common.archived");
   if (pathname === ROUTES.EXPLORE) return t("common.explore");
   if (pathname.startsWith("/u/")) return t("common.profile");
-  return t("common.memos");
+  return t("common.Quicktext");
 };
 
 const QuickFindDialog = () => {
@@ -32,6 +35,8 @@ const QuickFindDialog = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const currentUser = useCurrentUser();
+  const { userSearchHistorySetting, refetchSettings } = useAuth();
+  const { mutateAsync: updateUserSetting } = useUpdateUserSetting();
   const { data: memoViews = [] } = useMemoViews(currentUser?.name);
   const { filters, setFilters, setMemoView, memoView } = useMemoFilterContext();
   const { quickFindOpen, setQuickFindOpen } = useAppSidebar();
@@ -74,6 +79,21 @@ const QuickFindDialog = () => {
       setFilters(nextFilters);
       setMemoView(undefined);
       navigate(filterQuery ? `${ROUTES.HOME}?filter=${filterQuery}` : ROUTES.HOME);
+    }
+
+    if (query.trim()) {
+      const history = userSearchHistorySetting?.searchHistory || [];
+      const newHistory = [query.trim(), ...history.filter((h) => h !== query.trim())].slice(0, 10);
+      updateUserSetting({
+        setting: create(UserSettingSchema, {
+          name: `${currentUser?.name}/settings/SEARCH_HISTORY`,
+          value: {
+            case: "searchHistorySetting",
+            value: create(UserSetting_SearchHistorySettingSchema, { searchHistory: newHistory }),
+          },
+        }),
+        updateMask: ["search_history"],
+      }).then(() => refetchSettings());
     }
 
     setQuickFindOpen(false);
@@ -120,6 +140,33 @@ const QuickFindDialog = () => {
             <CornerDownLeftIcon className="size-3.5" />
           </Button>
         </form>
+        {query === "" && userSearchHistorySetting?.searchHistory && userSearchHistorySetting.searchHistory.length > 0 && (
+          <div className="flex flex-col border-t border-border/70 py-2">
+            <div className="px-4 py-2 text-xs font-medium text-muted-foreground uppercase tracking-wider">Recent Searches</div>
+            {userSearchHistorySetting.searchHistory.map((historyItem) => (
+              <button
+                key={historyItem}
+                className="flex items-center gap-3 px-4 py-2.5 text-sm text-foreground hover:bg-accent hover:text-accent-foreground w-full text-left cursor-pointer"
+                onClick={() => {
+                  setQuery(historyItem);
+                  const nextFilters = buildQuickFindFilters(historyItem, filters, collectionRoute);
+                  if (collectionRoute) {
+                    setFilters(nextFilters);
+                  } else {
+                    const filterQuery = stringifyFilters(nextFilters);
+                    setFilters(nextFilters);
+                    setMemoView(undefined);
+                    navigate(filterQuery ? `${ROUTES.HOME}?filter=${filterQuery}` : ROUTES.HOME);
+                  }
+                  setQuickFindOpen(false);
+                }}
+              >
+                <ClockIcon className="size-4 shrink-0 text-muted-foreground" />
+                <span className="truncate">{historyItem}</span>
+              </button>
+            ))}
+          </div>
+        )}
       </DialogContent>
     </Dialog>
   );
