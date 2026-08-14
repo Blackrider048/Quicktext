@@ -15,6 +15,7 @@ vi.mock("@/hooks/useNavigateTo", () => ({ default: () => vi.fn() }));
 vi.mock("@/hooks/useUserLocale", () => ({ useUserLocale: vi.fn() }));
 vi.mock("@/hooks/useUserTheme", () => ({ useUserTheme: vi.fn() }));
 vi.mock("@/utils/oauth", () => ({ cleanupExpiredOAuthState: vi.fn() }));
+vi.mock("@/hooks/useAlarms", () => ({ useAlarms: vi.fn() }));
 
 describe("scroll restoration", () => {
   let scrollY = 0;
@@ -28,8 +29,8 @@ describe("scroll restoration", () => {
   });
 
   it("resets new routes and restores history entries", async () => {
-    const scrollTo = vi.spyOn(window, "scrollTo").mockImplementation((xOrOptions, y) => {
-      scrollY = typeof xOrOptions === "number" ? (y ?? 0) : (xOrOptions.top ?? 0);
+    const scrollTo = vi.spyOn(window, "scrollTo").mockImplementation((xOrOptions: any, y?: any) => {
+      scrollY = typeof xOrOptions === "number" ? (y ?? 0) : (xOrOptions?.top ?? 0);
     });
     const router = createMemoryRouter(
       [
