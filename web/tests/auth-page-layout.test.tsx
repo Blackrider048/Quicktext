@@ -34,19 +34,19 @@ describe("<AuthPageLayout> explore band", () => {
     instance.instanceUrl = "https://demo.example.com";
     renderLayout();
 
-    expect(screen.getByRole("link", { name: /auth\.explore-public-memos/ })).toHaveAttribute("href", "/explore");
+    expect(screen.getByRole("link", { name: /auth\.explore-public-Quicktext/ })).toHaveAttribute("href", "/explore");
   });
 
   it("omits the band on private instances", () => {
     renderLayout();
 
-    expect(screen.queryByRole("link", { name: /auth\.explore-public-memos/ })).not.toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: /auth\.explore-public-Quicktext/ })).not.toBeInTheDocument();
   });
 
   it("omits the band when hideExplore is set (first-run setup)", () => {
     instance.instanceUrl = "https://demo.example.com";
     renderLayout({ hideExplore: true });
 
-    expect(screen.queryByRole("link", { name: /auth\.explore-public-memos/ })).not.toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: /auth\.explore-public-Quicktext/ })).not.toBeInTheDocument();
   });
 });
