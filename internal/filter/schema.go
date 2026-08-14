@@ -2,7 +2,6 @@ package filter
 
 import (
 	"fmt"
-
 	"github.com/google/cel-go/cel"
 	"github.com/google/cel-go/ext"
 )
