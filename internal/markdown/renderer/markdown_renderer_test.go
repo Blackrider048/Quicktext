@@ -67,8 +67,8 @@ func TestMarkdownRenderer(t *testing.T) {
 		},
 		{
 			name:     "code block fenced",
-			input:    "```go\nfunc main() {\n}\n```",
-			expected: "```go\nfunc main() {\n}\n```",
+			input:    "```go\n {\n}\n```",
+			expected: "```go\n {\n}\n```",
 		},
 		{
 			name:     "unordered list",

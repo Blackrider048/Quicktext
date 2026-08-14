@@ -27,7 +27,7 @@ import (
     "github.com/usememos/memos/internal/scheduler"
 )
 
-func main() {
+ {
     s := scheduler.New()
 
     s.Register(&scheduler.Job{
