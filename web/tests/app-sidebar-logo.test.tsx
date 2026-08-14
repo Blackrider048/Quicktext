@@ -3,7 +3,6 @@ import { fireEvent, render as testingLibraryRender, screen } from "@testing-libr
 import { MemoryRouter } from "react-router-dom";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import AppSidebar, { MobileAppHeader } from "@/components/AppSidebar";
-import { SIDEBAR_SECTION_ACTION_BUTTON_CLASSES, SIDEBAR_SECTION_ACTION_ICON_CLASSES } from "@/components/AppSidebar/SidebarSection";
 
 const authState = vi.hoisted(() => ({
   currentUser: { name: "users/test" } as { name: string } | undefined,
@@ -135,7 +134,7 @@ describe("App sidebar logo", () => {
 
     expect(screen.getByRole("link", { name: "common.explore" })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "common.about" })).toHaveAttribute("href", "/about");
-    expect(screen.getByRole("link", { name: "common.sign-in-to-memos" }).closest("footer")).not.toBeNull();
+    expect(screen.getByRole("link", { name: "common.sign-in-to-Quicktext" }).closest("footer")).not.toBeNull();
     expect(screen.queryByRole("link", { name: "common.home" })).not.toBeInTheDocument();
   });
 
@@ -149,7 +148,7 @@ describe("App sidebar logo", () => {
     expect(screen.getByText("Calendar")).toBeInTheDocument();
     expect(screen.getByRole("region", { name: "common.statistics" })).toBeInTheDocument();
     expect(screen.queryByRole("heading", { name: "common.statistics" })).not.toBeInTheDocument();
-    expect(screen.getByText("common.views")).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Categories", level: 2 })).toBeInTheDocument();
     expect(screen.getByText("Tags")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "common.attachments" })).toHaveAttribute("href", "/attachments");
     expect(screen.getByRole("link", { name: "common.inbox" })).toHaveAttribute("href", "/inbox");
@@ -171,7 +170,7 @@ describe("App sidebar logo", () => {
     expect(screen.queryByRole("link", { name: "common.attachments" })).not.toBeInTheDocument();
     expect(screen.queryByRole("link", { name: "common.inbox" })).not.toBeInTheDocument();
     expect(screen.getByRole("link", { name: "common.about" })).toHaveAttribute("href", "/about");
-    expect(screen.getByRole("link", { name: "common.sign-in-to-memos" }).closest("footer")).not.toBeNull();
+    expect(screen.getByRole("link", { name: "common.sign-in-to-Quicktext" }).closest("footer")).not.toBeNull();
   });
 
   it("marks About active for a guest on the About page", () => {
@@ -194,17 +193,12 @@ describe("App sidebar logo", () => {
     );
 
     const calendar = screen.getByText("Calendar");
-    const views = screen.getByText("common.views");
+    const categories = screen.getByText("Categories");
     expect(screen.getByRole("region", { name: "common.statistics" })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "common.views", level: 2 })).toBeInTheDocument();
-    expect(calendar.compareDocumentPosition(views) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
-    const viewOptions = screen.getByRole("button", { name: "memo.view-options" });
-    const createView = screen.getByRole("button", { name: "common.create" });
-    expect(viewOptions.compareDocumentPosition(createView) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
-    expect(createView).toHaveClass(...SIDEBAR_SECTION_ACTION_BUTTON_CLASSES.split(" "));
-    expect(createView.querySelector("svg")).toHaveClass(SIDEBAR_SECTION_ACTION_ICON_CLASSES);
-    const tasksView = screen.getByRole("button", { name: "common.tasks" });
-    expect(tasksView).toHaveTextContent("common.tasks");
+    expect(screen.getByRole("heading", { name: "Categories", level: 2 })).toBeInTheDocument();
+    expect(calendar.compareDocumentPosition(categories) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    const tasksView = screen.getByRole("button", { name: "Tasks" });
+    expect(tasksView).toHaveTextContent("Tasks");
     expect(tasksView).not.toHaveTextContent("☑️");
     expect(screen.queryByRole("button", { name: "common.all" })).not.toBeInTheDocument();
 
@@ -218,7 +212,7 @@ describe("App sidebar logo", () => {
   it("uses compact text-only actions for a saved view", async () => {
     authState.memoViews = [{ name: "memoViews/1", title: "testgp" }];
     render(
-      <MemoryRouter initialEntries={["/"]}>
+      <MemoryRouter initialEntries={["/views"]}>
         <AppSidebar />
       </MemoryRouter>,
     );
