@@ -8,6 +8,7 @@ web/dist
 build/
 bin/
 memos
+memos.exe
 
 .DS_Store
 
@@ -17,7 +18,8 @@ memos
 # Docker Compose Environment File
 .env
 
-dist
+/dist
+!server/router/frontend/dist/
 
 # VSCode settings
 .vscode

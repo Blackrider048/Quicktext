@@ -3,7 +3,8 @@ package postgres
 import (
 	"context"
 	"database/sql"
-	"log"
+	"log/slog"
+	"time"
 
 	// Import the PostgreSQL driver.
 	_ "github.com/lib/pq"
@@ -23,11 +24,23 @@ func NewDB(profile *profile.Profile) (store.Driver, error) {
 		return nil, errors.New("profile is nil")
 	}
 
-	// Open the PostgreSQL connection
+	// Open the PostgreSQL connection.
 	db, err := sql.Open("postgres", profile.DSN)
 	if err != nil {
-		log.Printf("Failed to open database: %s", err)
+		slog.Error("failed to open database", "error", err)
 		return nil, errors.Wrapf(err, "failed to open database: %s", profile.DSN)
+	}
+
+	// Connection pool tuning for hosted PostgreSQL (Supabase, Neon, etc.).
+	// Supabase free-tier pooler allows ~60 connections; keep well below that.
+	db.SetMaxOpenConns(25)
+	db.SetMaxIdleConns(5)
+	db.SetConnMaxLifetime(5 * time.Minute)
+
+	// Fail fast if the DSN is wrong or the database is unreachable.
+	if err := db.Ping(); err != nil {
+		db.Close()
+		return nil, errors.Wrap(err, "failed to ping database")
 	}
 
 	var driver store.Driver = &DB{
@@ -35,7 +48,6 @@ func NewDB(profile *profile.Profile) (store.Driver, error) {
 		profile: profile,
 	}
 
-	// Return the DB struct
 	return driver, nil
 }
 
