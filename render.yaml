@@ -1,0 +1,23 @@
+# Render Blueprint – Quicktext (Memos fork)
+# https://docs.render.com/infrastructure-as-code
+#
+# The frontend SPA is pre-built and committed in server/router/frontend/dist/
+# so Render only needs to compile the Go binary (~2-3 min).
+
+services:
+  - type: web
+    name: quicktext
+    runtime: go
+    plan: free
+    buildCommand: go build -trimpath -ldflags="-s -w" -tags netgo,osusergo -o memos ./cmd/memos
+    startCommand: ./memos --driver postgres --port $PORT
+    healthCheckPath: /healthz
+    envVars:
+      - key: MEMOS_DSN
+        sync: false  # Set in Render dashboard (Supabase PostgreSQL connection string)
+      - key: MEMOS_DRIVER
+        value: postgres
+      - key: MEMOS_DATA
+        value: /opt/render/project/data
+      - key: GO_VERSION
+        value: "1.26.2"

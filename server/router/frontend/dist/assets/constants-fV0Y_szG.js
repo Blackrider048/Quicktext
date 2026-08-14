@@ -1,0 +1,1 @@
+var e=`https://github.com/usememos/web-clipper`;export{e as t};

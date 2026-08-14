@@ -1,0 +1,1 @@
+import{s as e}from"./rolldown-runtime-zSbnoVup.js";import{r as t}from"./jsx-runtime-DxKf3yUy.js";import{Rn as n}from"./useOpenInteractionType-Bb9NI6o8.js";var r=e(t(),1).forwardRef(function(e,t){let{className:r,render:i,orientation:a=`horizontal`,style:o,...s}=e;return n(`div`,e,{state:{orientation:a},ref:t,props:[{role:`separator`,"aria-orientation":a},s]})});export{r as t};
