@@ -3,7 +3,6 @@ import { fireEvent, render as testingLibraryRender, screen } from "@testing-libr
 import { MemoryRouter } from "react-router-dom";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import AppSidebar, { MobileAppHeader } from "@/components/AppSidebar";
-import { SIDEBAR_SECTION_ACTION_BUTTON_CLASSES, SIDEBAR_SECTION_ACTION_ICON_CLASSES } from "@/components/AppSidebar/SidebarSection";
 
 const authState = vi.hoisted(() => ({
   currentUser: { name: "users/test" } as { name: string } | undefined,
@@ -135,7 +134,7 @@ describe("App sidebar logo", () => {
 
     expect(screen.getByRole("link", { name: "common.explore" })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "common.about" })).toHaveAttribute("href", "/about");
-    expect(screen.getByRole("link", { name: "common.sign-in-to-memos" }).closest("footer")).not.toBeNull();
+    expect(screen.getByRole("link", { name: "common.sign-in-to-Quicktext" }).closest("footer")).not.toBeNull();
     expect(screen.queryByRole("link", { name: "common.home" })).not.toBeInTheDocument();
   });
 
@@ -149,7 +148,10 @@ describe("App sidebar logo", () => {
     expect(screen.getByText("Calendar")).toBeInTheDocument();
     expect(screen.getByRole("region", { name: "common.statistics" })).toBeInTheDocument();
     expect(screen.queryByRole("heading", { name: "common.statistics" })).not.toBeInTheDocument();
-    expect(screen.getByText("common.views")).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Categories", level: 2 })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "URLs" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Images" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Tasks" })).toBeInTheDocument();
     expect(screen.getByText("Tags")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "common.attachments" })).toHaveAttribute("href", "/attachments");
     expect(screen.getByRole("link", { name: "common.inbox" })).toHaveAttribute("href", "/inbox");
@@ -171,7 +173,7 @@ describe("App sidebar logo", () => {
     expect(screen.queryByRole("link", { name: "common.attachments" })).not.toBeInTheDocument();
     expect(screen.queryByRole("link", { name: "common.inbox" })).not.toBeInTheDocument();
     expect(screen.getByRole("link", { name: "common.about" })).toHaveAttribute("href", "/about");
-    expect(screen.getByRole("link", { name: "common.sign-in-to-memos" }).closest("footer")).not.toBeNull();
+    expect(screen.getByRole("link", { name: "common.sign-in-to-Quicktext" }).closest("footer")).not.toBeNull();
   });
 
   it("marks About active for a guest on the About page", () => {
@@ -194,18 +196,14 @@ describe("App sidebar logo", () => {
     );
 
     const calendar = screen.getByText("Calendar");
-    const views = screen.getByText("common.views");
+    const categories = screen.getByRole("heading", { name: "Categories", level: 2 });
     expect(screen.getByRole("region", { name: "common.statistics" })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "common.views", level: 2 })).toBeInTheDocument();
-    expect(calendar.compareDocumentPosition(views) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
-    const viewOptions = screen.getByRole("button", { name: "memo.view-options" });
-    const createView = screen.getByRole("button", { name: "common.create" });
-    expect(viewOptions.compareDocumentPosition(createView) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
-    expect(createView).toHaveClass(...SIDEBAR_SECTION_ACTION_BUTTON_CLASSES.split(" "));
-    expect(createView.querySelector("svg")).toHaveClass(SIDEBAR_SECTION_ACTION_ICON_CLASSES);
-    const tasksView = screen.getByRole("button", { name: "common.tasks" });
-    expect(tasksView).toHaveTextContent("common.tasks");
-    expect(tasksView).not.toHaveTextContent("☑️");
+    expect(calendar.compareDocumentPosition(categories) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(screen.getByRole("button", { name: "URLs" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Images" })).toBeInTheDocument();
+    const tasksCategory = screen.getByRole("button", { name: "Tasks" });
+    expect(tasksCategory).toHaveTextContent("Tasks");
+    expect(tasksCategory).not.toHaveTextContent("☑️");
     expect(screen.queryByRole("button", { name: "common.all" })).not.toBeInTheDocument();
 
     const scopeTrigger = screen.getByRole("button", { name: "common.home" });
@@ -215,7 +213,7 @@ describe("App sidebar logo", () => {
     expect(screen.getByRole("menuitem", { name: "common.archived" })).toBeInTheDocument();
   });
 
-  it("uses compact text-only actions for a saved view", async () => {
+  it("keeps categories visible when memo views exist", () => {
     authState.memoViews = [{ name: "memoViews/1", title: "testgp" }];
     render(
       <MemoryRouter initialEntries={["/"]}>
@@ -223,16 +221,9 @@ describe("App sidebar logo", () => {
       </MemoryRouter>,
     );
 
-    fireEvent.click(screen.getByRole("button", { name: "common.edit testgp" }));
-
-    const menu = await screen.findByRole("menu");
-    expect(menu).toHaveAttribute("data-size", "sm");
-    expect(menu).toHaveClass("min-w-24", "p-0.5");
-    const editItem = screen.getByRole("menuitem", { name: "common.edit" });
-    const deleteItem = screen.getByRole("menuitem", { name: "common.delete" });
-    expect(editItem.querySelector("svg")).toBeNull();
-    expect(deleteItem.querySelector("svg")).toBeNull();
-    expect(deleteItem).toHaveAttribute("data-variant", "destructive");
+    expect(screen.getByRole("heading", { name: "Categories", level: 2 })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "URLs" })).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "common.edit testgp" })).not.toBeInTheDocument();
   });
 
   it("collapses inactive global destinations and defaults the scope icon to Home", async () => {
