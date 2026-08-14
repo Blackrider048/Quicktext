@@ -252,10 +252,10 @@ func NewSchema() Schema {
 			},
 		},
 		"has_image": {
-			Name:        "has_image",
-			Kind:        FieldKindScalar,
-			Type:        FieldTypeBool,
-			Column:      Column{Table: "memo", Name: "id"},
+			Name:   "has_image",
+			Kind:   FieldKindScalar,
+			Type:   FieldTypeBool,
+			Column: Column{Table: "memo", Name: "id"},
 			Expressions: map[DialectName]string{
 				DialectSQLite:   "(EXISTS (SELECT 1 FROM `attachment` WHERE `attachment`.`memo_id` = `memo`.`id` AND `attachment`.`type` LIKE 'image/%'))",
 				DialectMySQL:    "(EXISTS (SELECT 1 FROM `attachment` WHERE `attachment`.`memo_id` = `memo`.`id` AND `attachment`.`type` LIKE 'image/%'))",
